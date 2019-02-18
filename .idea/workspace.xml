@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c93ed01f-ee3f-4c2b-84b7-abd91b1fd524" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Matrix.java" afterDir="false" />
     </list>
@@ -18,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Matrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="-491">
+              <caret line="79" selection-start-line="79" selection-end-line="79" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#Matrix#0;class#Matrix#0" />
@@ -28,14 +27,17 @@
                 <element signature="docComment;method#set#0;class#Matrix#0" />
                 <element signature="docComment;method#left#0;class#Matrix#0" />
                 <element signature="docComment;method#move#0;class#Matrix#0" />
-                <element signature="method#move#0;class#Matrix#0" />
+                <element signature="method#areNulls#0;class#Matrix#0" />
                 <element signature="docComment;method#movesRemaining#0;class#Matrix#0" />
                 <element signature="method#movesRemaining#0;class#Matrix#0" />
                 <element signature="docComment;method#right#0;class#Matrix#0" />
+                <element signature="method#right#0;class#Matrix#0" />
                 <element signature="docComment;method#up#0;class#Matrix#0" />
                 <element signature="method#up#0;class#Matrix#0" />
                 <element signature="docComment;method#down#0;class#Matrix#0" />
+                <element signature="method#down#0;class#Matrix#0" />
                 <element signature="docComment;method#slide#0;class#Matrix#0" />
+                <element signature="method#slide#0;class#Matrix#0" />
                 <element signature="docComment;method#print#0;class#Matrix#0" />
                 <element signature="method#print#0;class#Matrix#0" />
                 <element signature="docComment;method#fill#0;class#Matrix#0" />
@@ -43,6 +45,7 @@
                 <element signature="docComment;method#clear#0;class#Matrix#0" />
                 <element signature="method#clear#0;class#Matrix#0" />
                 <element signature="docComment;method#areDups#1;class#Matrix#0" />
+                <element signature="method#areDups#0;class#Matrix#0" />
                 <element signature="docComment;method#placeRandom#0;class#Matrix#0" />
                 <element signature="method#placeRandom#0;class#Matrix#0" />
                 <element signature="docComment;class#MatrixCell#0" />
@@ -61,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+            <state relative-caret-position="145">
+              <caret line="83" column="106" selection-start-line="83" selection-start-column="106" selection-end-line="83" selection-end-column="106" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#268#269#0" expanded="true" />
@@ -130,7 +133,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550524472258" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550525127157" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -173,7 +176,7 @@
       <updated>1550451741565</updated>
       <workItem from="1550451746296" duration="25000" />
       <workItem from="1550456142864" duration="82000" />
-      <workItem from="1550521660134" duration="2758000" />
+      <workItem from="1550521660134" duration="3699000" />
     </task>
     <task id="LOCAL-00001" summary="Added game class">
       <created>1550522594666</created>
@@ -182,11 +185,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550522594666</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="game class updates and scoring implementations">
+      <created>1550524455426</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1550524455426</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2865000" />
+    <option name="totallyTimeSpent" value="3806000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="134" y="43" width="2426" height="1557" extended-state="6" />
@@ -202,7 +212,7 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32943013" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32943013" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -210,7 +220,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32943013" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32943013" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -228,13 +238,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added game class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added game class" />
+    <MESSAGE value="game class updates and scoring implementations" />
+    <option name="LAST_COMMIT_MESSAGE" value="game class updates and scoring implementations" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="-491">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#Matrix#0;class#Matrix#0" />
@@ -243,14 +254,17 @@
             <element signature="docComment;method#set#0;class#Matrix#0" />
             <element signature="docComment;method#left#0;class#Matrix#0" />
             <element signature="docComment;method#move#0;class#Matrix#0" />
-            <element signature="method#move#0;class#Matrix#0" />
+            <element signature="method#areNulls#0;class#Matrix#0" />
             <element signature="docComment;method#movesRemaining#0;class#Matrix#0" />
             <element signature="method#movesRemaining#0;class#Matrix#0" />
             <element signature="docComment;method#right#0;class#Matrix#0" />
+            <element signature="method#right#0;class#Matrix#0" />
             <element signature="docComment;method#up#0;class#Matrix#0" />
             <element signature="method#up#0;class#Matrix#0" />
             <element signature="docComment;method#down#0;class#Matrix#0" />
+            <element signature="method#down#0;class#Matrix#0" />
             <element signature="docComment;method#slide#0;class#Matrix#0" />
+            <element signature="method#slide#0;class#Matrix#0" />
             <element signature="docComment;method#print#0;class#Matrix#0" />
             <element signature="method#print#0;class#Matrix#0" />
             <element signature="docComment;method#fill#0;class#Matrix#0" />
@@ -258,6 +272,7 @@
             <element signature="docComment;method#clear#0;class#Matrix#0" />
             <element signature="method#clear#0;class#Matrix#0" />
             <element signature="docComment;method#areDups#1;class#Matrix#0" />
+            <element signature="method#areDups#0;class#Matrix#0" />
             <element signature="docComment;method#placeRandom#0;class#Matrix#0" />
             <element signature="method#placeRandom#0;class#Matrix#0" />
             <element signature="docComment;class#MatrixCell#0" />
@@ -274,8 +289,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+        <state relative-caret-position="145">
+          <caret line="83" column="106" selection-start-line="83" selection-start-column="106" selection-end-line="83" selection-end-column="106" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#268#269#0" expanded="true" />

@@ -44,6 +44,54 @@ public class Game implements KeyListener {
     }
 
 
+    /**
+     * if swipeUp() is a valid move, game will move the matrix up
+     */
+    private void swipeUp() {
+        if (board.move(3)) {
+            int points = board.up();
+            board.placeRandom();
+            board.print();
+            updateScore(points);
+        }
+    }
+
+    /**
+     * if swipeDown() is a valid move, game moves the matrix, adds a new block, and updates score
+     */
+    private void swipeDown() {
+        if (board.move(4)) {
+            int points = board.down();
+            board.placeRandom();
+            board.print();
+            updateScore(points);
+        }
+    }
+
+    /**
+     * if swipeLeft() is a valid move, game moves the matrix, adds a new block, and updates score
+     */
+    private void swipeLeft() {
+        if (board.move(1)) {
+            int points = board.left();
+            board.placeRandom();
+            board.print();
+            updateScore(points);
+        }
+    }
+
+    /**
+     * if swipeRight() is a valid move, game will move the matrix, add a random tile, and update the score
+     */
+    private void swipeRight() {
+        if (board.move(2)) {
+            int points = board.right();
+            board.placeRandom();
+            board.print();
+            updateScore(points);
+        }
+    }
+
     @Override
     public void keyTyped(KeyEvent e) {
 

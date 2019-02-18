@@ -65,19 +65,39 @@ public class Matrix extends JComponent {
     boolean move(int dir) {
 
         if (areDups(dir)) {
+            System.out.println("valid");
             return true; //if there are duplicates in the direction specified, then return true because you can move that way
         }
 
+        System.out.println("invalid");
         return false; //no move in that direction
     }
 
+    /**
+     *
+     * @return boolean true or false representing if NULL values are in the matrix
+     */
+    boolean areNulls() {
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j].getValue() == NULL) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
     /**
      *
      * @return boolean true or false indicating if there are possible moves remaining
      */
     boolean movesRemaining() {
         for (int i = 1; i <= 4; i++) {
-            if (move(i)) {
+
+            if (move(i) || areNulls()) {
+
                 //iterates thru each direction, if there are moves remaining in any direction (i.e. duplicates
                 //next to eachother in the array) this function will return true;
                 return true;
