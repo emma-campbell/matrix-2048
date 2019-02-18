@@ -50,33 +50,68 @@ public class Matrix extends JComponent {
     /**
      * Move all cells to the left
      */
-    void left() {
-        slide(1);
+    int left() {
+        int point = slide(1);
         System.out.println("left");
+        return point;
+    }
+
+    /**
+     * Validates the users move
+     *
+     * @param dir integer 1, 2, 3, or 4 representing left, right, up, and down respectively
+     * @return boolean true or false representing whether the user can move that way or not
+     */
+    boolean move(int dir) {
+
+        if (areDups(dir)) {
+            return true; //if there are duplicates in the direction specified, then return true because you can move that way
+        }
+
+        return false; //no move in that direction
+    }
+
+    /**
+     *
+     * @return boolean true or false indicating if there are possible moves remaining
+     */
+    boolean movesRemaining() {
+        for (int i = 1; i <= 4; i++) {
+            if (move(i)) {
+                //iterates thru each direction, if there are moves remaining in any direction (i.e. duplicates
+                //next to eachother in the array) this function will return true;
+                return true;
+            }
+        }
+
+        return false; //no moves remaining in any direction
     }
 
     /**
      * Moves all cells to the right
      */
-    void right() {
-        slide(2);
+    int right() {
+        int point = slide(2);
         System.out.println("right");
+        return point;
     }
 
     /**
      * Moves all cells up
      */
-    void up() {
-        slide(3);
+    int up() {
+        int point = slide(3);
         System.out.println("up");
+        return point;
     }
 
     /**
      * Moves all cells down
      */
-    void down() {
-        slide(4);
+    int down() {
+        int point = slide(4);
         System.out.println("down");
+        return point;
     }
 
     /**
@@ -131,7 +166,7 @@ public class Matrix extends JComponent {
                             }
                         }
                     }
-                } while (areDups(1, row));
+                } while (areDups(1));
             }
         }
 
@@ -178,7 +213,7 @@ public class Matrix extends JComponent {
                             }
                         }
                     }
-                } while (areDups(2, row));
+                } while (areDups(2));
             }
         }
 
@@ -329,29 +364,22 @@ public class Matrix extends JComponent {
     }
 
     /**
-     * Method that determines if there are still duplicates going in a certain direction
-     *
-     * @param dir direction slide is going
-     * @param row the row that slide is on
-     * @return boolean true or false
-     */
-    private boolean areDups(int dir, MatrixCell[] row) {
-        if (dir == 1 || dir == 2) {
-            for (int i = row.length - 1; i > 0; i--) {
-                if (row[i].getValue() == row[i - 1].getValue() && !(row[i].isNull())) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    /**
      *
      * @param dir integer representing direction of travel
      * @return boolean true or false
      */
     private boolean areDups(int dir) {
+
+        if (dir == 1 || dir == 2) {
+            for (int i = matrix.length - 1; i > 0; i--) {
+                for (int j = 0; j < matrix[i].length - 1; j++) {
+                    if (matrix[i][j].getValue() == matrix[i - 1][j].getValue() && !(matrix[i][j].isNull())) {
+                        return true;
+                    }
+                }
+            }
+        }
+
         if (dir == 3 || dir == 4) {
 
             for (int i = 0; i < matrix.length; i++) {
@@ -362,7 +390,8 @@ public class Matrix extends JComponent {
                 }
             }
         }
-        return false;
+
+        return false; //if it doesn't find any duplicates, return false.
     }
 
     /**
