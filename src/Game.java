@@ -1,11 +1,9 @@
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
 /**
  * @author emma-campbell
  * @version 1.0
  * @since 2019-02-18
  *
+ * The overall function of the game class is to combine score mechanisms with game function mechanisms.
  */
 public class Game {
 
@@ -28,6 +26,15 @@ public class Game {
         score = 0;
     }
 
+    /**
+     * Clear the board, reinitialize the score to zero and place two new random pieces
+     *
+     * @returns void
+     */
+    private void restart() {
+        board.clear();
+        start();
+    }
 
     /**
      * Adds point from the previous move to the total score
