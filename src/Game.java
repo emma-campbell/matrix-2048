@@ -7,7 +7,7 @@ import java.awt.event.KeyListener;
  * @since 2019-02-18
  *
  */
-public class Game implements KeyListener {
+public class Game {
 
     private Matrix board = new Matrix();
     private int score;
@@ -28,16 +28,12 @@ public class Game implements KeyListener {
         score = 0;
     }
 
-    private void play() {
-        while (board.movesRemaining()) {
-
-        }
-    }
 
     /**
      * Adds point from the previous move to the total score
      *
      * @param points integer representing the points from the previous move
+     * @return void
      */
     private void updateScore(int points) {
         score += points;
@@ -46,6 +42,8 @@ public class Game implements KeyListener {
 
     /**
      * if swipeUp() is a valid move, game will move the matrix up
+     *
+     * @return void
      */
     private void swipeUp() {
         if (board.move(3)) {
@@ -58,6 +56,8 @@ public class Game implements KeyListener {
 
     /**
      * if swipeDown() is a valid move, game moves the matrix, adds a new block, and updates score
+     *
+     * @return void
      */
     private void swipeDown() {
         if (board.move(4)) {
@@ -70,6 +70,8 @@ public class Game implements KeyListener {
 
     /**
      * if swipeLeft() is a valid move, game moves the matrix, adds a new block, and updates score
+     *
+     * @return void
      */
     private void swipeLeft() {
         if (board.move(1)) {
@@ -82,6 +84,8 @@ public class Game implements KeyListener {
 
     /**
      * if swipeRight() is a valid move, game will move the matrix, add a random tile, and update the score
+     *
+     * @return void
      */
     private void swipeRight() {
         if (board.move(2)) {
@@ -90,75 +94,6 @@ public class Game implements KeyListener {
             board.print();
             updateScore(points);
         }
-    }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        char dir = e.getKeyChar();
-
-        if (dir == 'w' || e.getKeyCode() == 38) { //if user inputs up
-            if (board.move(3)) {
-                System.out.println("valid");
-                int points = board.up();
-                board.placeRandom();
-                board.print();
-                updateScore(points);
-
-            }
-            else {
-                System.out.println("invalid");
-            }
-        }
-
-        if (dir == 'a' || e.getKeyCode() == 37) { //if user inputs left
-            if (board.move(1)) {
-                System.out.println("valid");
-                int points = board.left();
-                board.placeRandom();
-                board.print();
-                updateScore(points);
-            }
-            else {
-                System.out.println("invalid");
-            }
-        }
-
-        if (dir == 's' || e.getKeyCode() == 40) { //if user inputs down
-            if (board.move(4)) {
-                System.out.println("valid");
-                int points = board.down();
-                board.placeRandom();
-                board.print();
-                updateScore(points);
-            }
-            else {
-                System.out.println("invalid");
-            }
-        }
-
-        if (dir == 'd' || e.getKeyCode() == 39) { //if user inputs right
-            if (board.move(2)) {
-                System.out.println("valid");
-                int points = board.right();
-                board.placeRandom();
-                board.print();
-                updateScore(points);
-            }
-            else {
-                System.out.println();
-            }
-        }
-
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-
     }
 
 }
