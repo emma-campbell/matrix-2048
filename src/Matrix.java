@@ -85,8 +85,11 @@ public class Matrix extends JComponent {
      * @param dir the direction the user moves the board (1 -left, 2 - right, 3 - up, 4 -
      *            down)
      */
-    private void slide(int dir) {
+    private int slide(int dir) {
         boolean cont = true;
+
+        int points_to_add = 0;
+
         if (dir == 1) {
             for (MatrixCell[] row: matrix) {
                 do {
@@ -95,6 +98,7 @@ public class Matrix extends JComponent {
                         if (!(row[i].isNull())) {
                             if (row[i].getValue() == row[i+1].getValue()) {
                                 row[i].dub();
+                                points_to_add += row[i].getValue();
                                 row[i+1].clear();
 
                                 int n = i + 1;
@@ -120,6 +124,7 @@ public class Matrix extends JComponent {
                                 }
                                 else if (row[i].getValue() == row[n].getValue() && (row[i].getValue() != 0)){
                                     row[i].dub();
+                                    points_to_add += row[i].getValue();
                                     row[n].clear();
                                     n = -1;
                                 }
@@ -142,6 +147,7 @@ public class Matrix extends JComponent {
                         if (!(row[i].isNull())) {
                             if (row[i].getValue() == row[i - 1].getValue()) {
                                 row[i].dub();
+                                points_to_add += row[i].getValue();
                                 row[i - 1].clear();
 
                                 int n = i - 1;
@@ -165,6 +171,7 @@ public class Matrix extends JComponent {
                                 }
                                 else if (row[i].getValue() == row[n].getValue() && (row[i].getValue() != 0)){
                                     row[i].dub();
+                                    points_to_add += row[i].getValue();
                                     row[n].clear();
                                     n = -1;
                                 }
@@ -192,6 +199,8 @@ public class Matrix extends JComponent {
 
                             if (curr == next) {
                                 matrix[i][j].dub();
+                                points_to_add += matrix[i][j].getValue();
+
                                 matrix[i+1][j].clear();
 
                                 int n = i + 1;
@@ -215,6 +224,7 @@ public class Matrix extends JComponent {
                                 }
                                 else if (matrix[n][j].getValue() == matrix[i][j].getValue() && (matrix[n][j].getValue() != 0)) {
                                     matrix[i][j].dub();
+                                    points_to_add += matrix[i][j].getValue();
                                     matrix[n][j].clear();
                                     n = -1;
                                 }
@@ -243,6 +253,7 @@ public class Matrix extends JComponent {
                         if (!(matrix[i][j].isNull())) {
                             if (curr == next) {
                                 matrix[i][j].dub();
+                                points_to_add += matrix[i][j].getValue();
                                 matrix[i-1][j].clear();
 
                                 int n = i - 1;
@@ -267,6 +278,7 @@ public class Matrix extends JComponent {
                                 }
                                 else if (matrix[n][j].getValue() != matrix[i][j].getValue() && (matrix[n][j].getValue() != 0)){
                                     matrix[i][j].dub();
+                                    points_to_add += matrix[i][j].getValue();
                                     matrix[n][j].clear();
                                     n = -1;
                                 }
@@ -277,6 +289,7 @@ public class Matrix extends JComponent {
             } while(areDups(4));
         }
 
+        return points_to_add;
     }
 
     /**
@@ -367,6 +380,7 @@ public class Matrix extends JComponent {
         }
 
         matrix[i][j] = new MatrixCell(val);
+        System.out.println("Piece placed");
     }
 }
 
