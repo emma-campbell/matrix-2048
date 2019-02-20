@@ -10,6 +10,7 @@ import java.awt.event.KeyListener;
 public class GUI extends JFrame implements ActionListener, KeyListener {
 
     private final double width = 500, height = 500;
+    private ScoreKeeper score = new ScoreKeeper((int)((1.0/4.0) * width), (int)((1.0/5.0) * height));
 
     private JLabel title = new JLabel("MATRIX[]2048", SwingConstants.CENTER);
 
@@ -52,6 +53,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
 
         title.setFont(new Font("SansSerif", Font.PLAIN, 24));
         this.add(title);
+        this.add(score);
 
     }
 }
