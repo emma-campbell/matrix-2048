@@ -1,7 +1,5 @@
 package app.matrix.views;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.Toolkit;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -15,7 +13,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
 
     public GUI() {
 
-        setSize((int)width, (int)height);
+        setSize((int) width, (int) height);
         addComponents();
 
     }

@@ -1,7 +1,7 @@
 package app.matrix;
 
 import javax.swing.*;
-import app.matrix.*;
+import app.matrix.views.GUI;
 
 public class App {
 
