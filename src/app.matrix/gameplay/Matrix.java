@@ -1,3 +1,5 @@
+package app.matrix.gameplay;
+
 import javax.swing.*;
 import java.util.Random;
 /**

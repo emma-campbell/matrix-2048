@@ -1,4 +1,7 @@
+package app.matrix;
+
 import javax.swing.*;
+import app.matrix.*;
 
 public class App {
 
