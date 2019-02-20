@@ -1,5 +1,6 @@
 package app.matrix.views;
 
+import app.matrix.gameplay.Game;
 import app.matrix.views.infoPanel.TopPanel;
 import app.matrix.views.score.ScoreCenter;
 
@@ -12,8 +13,9 @@ import java.awt.event.KeyListener;
 
 public class GUI extends JFrame implements ActionListener, KeyListener {
 
-    private final double width = 485, height = 700;
+    private final double width = 500, height = 700;
     private TopPanel top = new TopPanel();
+    private Game game = new Game();
 
     public GUI() {
 
@@ -51,8 +53,12 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
 
     private void addComponents() {
 
-        this.setLayout(new GridLayout(4, 1));
-        this.add(top);
+        this.setLayout(new BorderLayout());
+
+
+        this.add(top, BorderLayout.NORTH);
+
+        this.add(game, BorderLayout.CENTER);
 
     }
 }

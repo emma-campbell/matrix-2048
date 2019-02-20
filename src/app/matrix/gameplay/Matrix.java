@@ -1,28 +1,39 @@
 package app.matrix.gameplay;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.Random;
+
 /**
  * @author emma-campbell
  * @version 1.0
  * @since 2019-02-16
  */
-public class Matrix extends JComponent {
+class Matrix extends JComponent {
 
     private Random r = new Random();
     private MatrixCell[][] matrix = new MatrixCell[4][4];
     private static final int NULL = 0;
+    private int width, height;
 
     /**
      * Constructor that initializes the game board with all empty slots, then places two
      * random tiles in random places
      */
-    Matrix() {
+    Matrix(int width, int height) {
+
+        super();
+
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 matrix[i][j] = new MatrixCell(NULL);
             }
         }
+
+        this.width = width;
+        this.height = height;
+
+        this.setLayout(new GridLayout(4,4));
     }
 
     /**
@@ -91,6 +102,7 @@ public class Matrix extends JComponent {
 
         return false;
     }
+
     /**
      *
      * @return boolean true or false indicating if there are possible moves remaining
@@ -433,6 +445,23 @@ public class Matrix extends JComponent {
         matrix[i][j] = new MatrixCell(val);
         System.out.println("Piece placed");
     }
+
+    /* OVERRIDEN METHODS */
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponents(g);
+
+        g.setColor(new Color(48, 92, 163));
+        g.fillRect(50, 0, width, height);
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                this.add(matrix[i][j]);
+                matrix[i][j].paintComponent(g);
+            }
+        }
+    }
 }
 
 /**
@@ -440,7 +469,7 @@ public class Matrix extends JComponent {
  * @version 0.1
  * @since 2019-02-16
  */
-class MatrixCell {
+class MatrixCell extends JComponent {
 
     private static final int NULL = 0;
     private int value;
@@ -482,5 +511,12 @@ class MatrixCell {
      */
     boolean isNull() { return value == NULL; }
 
+    @Override
+    public void paintComponent(Graphics g) {
+         super.paintComponent(g);
+
+         g.setColor(new Color(221, 234, 255));
+         g.fillRect(0,0, 10, 10);
+    }
 }
 

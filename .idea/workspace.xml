@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c93ed01f-ee3f-4c2b-84b7-abd91b1fd524" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/matrix/views/infoPanel/TopPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/matrix/views/score/ScoreCenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/ScoreKeeper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/matrix/gameplay/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/gameplay/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/matrix/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/views/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/matrix/views/ScoreKeeper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/matrix/views/score/ScoreCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/views/score/ScoreCenter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +17,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/matrix/views/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+            <state relative-caret-position="240">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/matrix/views/infoPanel/TopPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -34,10 +44,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/matrix/views/score/ScoreCenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="34">
+              <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#1205#1206#0" expanded="true" />
                 <element signature="e#1228#1229#0" expanded="true" />
                 <element signature="e#1667#1668#0" expanded="true" />
@@ -52,12 +61,80 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/matrix/views/infoPanel/TopPanel.java">
+        <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+            <state relative-caret-position="136">
+              <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="docComment;class#Game#0" />
+                <element signature="docComment;method#start#0;class#Game#0" />
+                <element signature="method#start#0;class#Game#0" />
+                <element signature="e#518#562#1" />
+                <element signature="docComment;method#restart#0;class#Game#0" />
+                <element signature="method#restart#0;class#Game#0" />
+                <element signature="docComment;method#updateScore#0;class#Game#0" />
+                <element signature="docComment;method#swipeUp#0;class#Game#0" />
+                <element signature="method#swipeUp#0;class#Game#0" />
+                <element signature="e#1217#1358#1" />
+                <element signature="docComment;method#swipeDown#0;class#Game#0" />
+                <element signature="method#swipeDown#0;class#Game#0" />
+                <element signature="e#1565#1708#1" />
+                <element signature="docComment;method#swipeLeft#0;class#Game#0" />
+                <element signature="method#swipeLeft#0;class#Game#0" />
+                <element signature="e#1915#2058#1" />
+                <element signature="docComment;method#swipeRight#0;class#Game#0" />
+                <element signature="method#swipeRight#0;class#Game#0" />
+                <element signature="e#2275#2419#1" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="517" column="9" selection-start-line="517" selection-start-column="9" selection-end-line="517" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#Matrix#0;class#Matrix#0" />
+                <element signature="docComment;method#get#0;class#Matrix#0" />
+                <element signature="docComment;method#set#0;class#Matrix#0" />
+                <element signature="docComment;method#left#0;class#Matrix#0" />
+                <element signature="method#left#0;class#Matrix#0" />
+                <element signature="docComment;method#move#0;class#Matrix#0" />
+                <element signature="method#move#0;class#Matrix#0" />
+                <element signature="docComment;method#areNulls#0;class#Matrix#0" />
+                <element signature="method#areNulls#0;class#Matrix#0" />
+                <element signature="docComment;method#movesRemaining#0;class#Matrix#0" />
+                <element signature="method#movesRemaining#0;class#Matrix#0" />
+                <element signature="e#2666#2904#1" />
+                <element signature="docComment;method#right#0;class#Matrix#0" />
+                <element signature="method#right#0;class#Matrix#0" />
+                <element signature="docComment;method#up#0;class#Matrix#0" />
+                <element signature="method#up#0;class#Matrix#0" />
+                <element signature="docComment;method#down#0;class#Matrix#0" />
+                <element signature="method#down#0;class#Matrix#0" />
+                <element signature="docComment;method#slide#0;class#Matrix#0" />
+                <element signature="method#slide#0;class#Matrix#0" />
+                <element signature="docComment;method#print#0;class#Matrix#0" />
+                <element signature="method#print#0;class#Matrix#0" />
+                <element signature="docComment;method#fill#0;class#Matrix#0" />
+                <element signature="method#fill#0;class#Matrix#0" />
+                <element signature="docComment;method#clear#0;class#Matrix#0" />
+                <element signature="method#clear#0;class#Matrix#0" />
+                <element signature="docComment;method#areDups#0;class#Matrix#0" />
+                <element signature="method#areDups#0;class#Matrix#0" />
+                <element signature="docComment;method#placeRandom#0;class#Matrix#0" />
+                <element signature="method#placeRandom#0;class#Matrix#0" />
+                <element signature="docComment;class#MatrixCell#0" />
+                <element signature="docComment;method#MatrixCell#0;class#MatrixCell#0" />
+                <element signature="docComment;method#getValue#0;class#MatrixCell#0" />
+                <element signature="docComment;method#setValue#0;class#MatrixCell#0" />
+                <element signature="docComment;method#dub#0;class#MatrixCell#0" />
+                <element signature="docComment;method#clear#0;class#MatrixCell#0" />
+                <element signature="docComment;method#isNull#0;class#MatrixCell#0" />
               </folding>
             </state>
           </provider>
@@ -69,6 +146,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -92,7 +170,11 @@
         <option value="$PROJECT_DIR$/src/app/matrix/views/ScoreKeeper.java" />
         <option value="$PROJECT_DIR$/src/app/matrix/views/ScoreCenter.java" />
         <option value="$PROJECT_DIR$/src/app/matrix/views/infoPanel/TopPanel.java" />
+        <option value="$PROJECT_DIR$/src/app/matrix/views/score/Score.java" />
+        <option value="$PROJECT_DIR$/src/app/matrix/gameplay/Game.java" />
         <option value="$PROJECT_DIR$/src/app/matrix/views/GUI.java" />
+        <option value="$PROJECT_DIR$/src/app/matrix/views/score/ScoreCenter.java" />
+        <option value="$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java" />
       </list>
     </option>
   </component>
@@ -130,7 +212,22 @@
               <item name="matrix-2048" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="matrix" type="462c0819:PsiDirectoryNode" />
+              <item name="gameplay" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="matrix-2048" type="b2602c69:ProjectViewProjectNode" />
+              <item name="matrix-2048" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="matrix" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="matrix-2048" type="b2602c69:ProjectViewProjectNode" />
+              <item name="matrix-2048" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="matrix" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="infoPanel" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -142,7 +239,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550673046771" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550676444224" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -228,7 +325,7 @@
       <workItem from="1550526439824" duration="355000" />
       <workItem from="1550630700654" duration="2023000" />
       <workItem from="1550633000754" duration="3087000" />
-      <workItem from="1550669807115" duration="3193000" />
+      <workItem from="1550669807115" duration="6128000" />
     </task>
     <task id="LOCAL-00001" summary="Added game class">
       <created>1550522594666</created>
@@ -248,7 +345,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12492000" />
+    <option name="totallyTimeSpent" value="15427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1440" height="877" extended-state="6" />
@@ -307,39 +404,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java">
+    <entry file="file://$PROJECT_DIR$/src/app/matrix/views/score/Score.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="442" column="6" selection-start-line="442" selection-start-column="6" selection-end-line="442" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#Matrix#0;class#Matrix#0" />
-            <element signature="method#Matrix#0;class#Matrix#0" />
-            <element signature="docComment;method#get#0;class#Matrix#0" />
-            <element signature="docComment;method#set#0;class#Matrix#0" />
-            <element signature="docComment;method#left#0;class#Matrix#0" />
-            <element signature="docComment;class#MatrixCell#0" />
-            <element signature="docComment;method#MatrixCell#0;class#MatrixCell#0" />
-            <element signature="docComment;method#getValue#0;class#MatrixCell#0" />
-            <element signature="docComment;method#setValue#0;class#MatrixCell#0" />
-            <element signature="docComment;method#dub#0;class#MatrixCell#0" />
-            <element signature="docComment;method#clear#0;class#MatrixCell#0" />
-            <element signature="docComment;method#isNull#0;class#MatrixCell#0" />
-          </folding>
+        <state relative-caret-position="248">
+          <caret line="792" column="19" selection-start-line="792" selection-start-column="19" selection-end-line="792" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-644">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="136">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Game#0" />
+            <element signature="docComment;method#start#0;class#Game#0" />
+            <element signature="method#start#0;class#Game#0" />
+            <element signature="e#518#562#1" />
+            <element signature="docComment;method#restart#0;class#Game#0" />
+            <element signature="method#restart#0;class#Game#0" />
+            <element signature="docComment;method#updateScore#0;class#Game#0" />
+            <element signature="docComment;method#swipeUp#0;class#Game#0" />
+            <element signature="method#swipeUp#0;class#Game#0" />
+            <element signature="e#1217#1358#1" />
+            <element signature="docComment;method#swipeDown#0;class#Game#0" />
+            <element signature="method#swipeDown#0;class#Game#0" />
+            <element signature="e#1565#1708#1" />
+            <element signature="docComment;method#swipeLeft#0;class#Game#0" />
+            <element signature="method#swipeLeft#0;class#Game#0" />
+            <element signature="e#1915#2058#1" />
+            <element signature="docComment;method#swipeRight#0;class#Game#0" />
+            <element signature="method#swipeRight#0;class#Game#0" />
+            <element signature="e#2275#2419#1" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/matrix/views/infoPanel/TopPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        <state relative-caret-position="83">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/matrix/views/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -348,10 +465,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/matrix/views/score/ScoreCenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="34">
+          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#1205#1206#0" expanded="true" />
             <element signature="e#1228#1229#0" expanded="true" />
             <element signature="e#1667#1668#0" expanded="true" />
@@ -364,12 +480,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/matrix/views/GUI.java">
+    <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        <state relative-caret-position="308">
+          <caret line="517" column="9" selection-start-line="517" selection-start-column="9" selection-end-line="517" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;method#Matrix#0;class#Matrix#0" />
+            <element signature="docComment;method#get#0;class#Matrix#0" />
+            <element signature="docComment;method#set#0;class#Matrix#0" />
+            <element signature="docComment;method#left#0;class#Matrix#0" />
+            <element signature="method#left#0;class#Matrix#0" />
+            <element signature="docComment;method#move#0;class#Matrix#0" />
+            <element signature="method#move#0;class#Matrix#0" />
+            <element signature="docComment;method#areNulls#0;class#Matrix#0" />
+            <element signature="method#areNulls#0;class#Matrix#0" />
+            <element signature="docComment;method#movesRemaining#0;class#Matrix#0" />
+            <element signature="method#movesRemaining#0;class#Matrix#0" />
+            <element signature="e#2666#2904#1" />
+            <element signature="docComment;method#right#0;class#Matrix#0" />
+            <element signature="method#right#0;class#Matrix#0" />
+            <element signature="docComment;method#up#0;class#Matrix#0" />
+            <element signature="method#up#0;class#Matrix#0" />
+            <element signature="docComment;method#down#0;class#Matrix#0" />
+            <element signature="method#down#0;class#Matrix#0" />
+            <element signature="docComment;method#slide#0;class#Matrix#0" />
+            <element signature="method#slide#0;class#Matrix#0" />
+            <element signature="docComment;method#print#0;class#Matrix#0" />
+            <element signature="method#print#0;class#Matrix#0" />
+            <element signature="docComment;method#fill#0;class#Matrix#0" />
+            <element signature="method#fill#0;class#Matrix#0" />
+            <element signature="docComment;method#clear#0;class#Matrix#0" />
+            <element signature="method#clear#0;class#Matrix#0" />
+            <element signature="docComment;method#areDups#0;class#Matrix#0" />
+            <element signature="method#areDups#0;class#Matrix#0" />
+            <element signature="docComment;method#placeRandom#0;class#Matrix#0" />
+            <element signature="method#placeRandom#0;class#Matrix#0" />
+            <element signature="docComment;class#MatrixCell#0" />
+            <element signature="docComment;method#MatrixCell#0;class#MatrixCell#0" />
+            <element signature="docComment;method#getValue#0;class#MatrixCell#0" />
+            <element signature="docComment;method#setValue#0;class#MatrixCell#0" />
+            <element signature="docComment;method#dub#0;class#MatrixCell#0" />
+            <element signature="docComment;method#clear#0;class#MatrixCell#0" />
+            <element signature="docComment;method#isNull#0;class#MatrixCell#0" />
           </folding>
         </state>
       </provider>

@@ -1,5 +1,8 @@
 package app.matrix.gameplay;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
  * @author emma-campbell
  * @version 1.0
@@ -7,13 +10,14 @@ package app.matrix.gameplay;
  *
  * The overall function of the game class is to combine score mechanisms with game function mechanisms.
  */
-public class Game {
+public class Game extends JComponent {
 
-    private Matrix board = new Matrix();
+    private Matrix board = new Matrix(375, 470);
     private int score;
 
     public Game() {
         this.start();
+        this.add(board);
     }
 
     /**
@@ -103,6 +107,11 @@ public class Game {
             board.print();
             updateScore(points);
         }
+    }
+
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        board.paintComponent(g);
     }
 
 }
