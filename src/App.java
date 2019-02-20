@@ -1,5 +1,3 @@
-package app.matrix;
-
 import javax.swing.*;
 import app.matrix.views.GUI;
 

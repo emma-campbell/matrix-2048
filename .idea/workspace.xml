@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c93ed01f-ee3f-4c2b-84b7-abd91b1fd524" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/matrix-2048.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/matrix-2048.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/Matrix.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/MatrixCell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.matrix/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.matrix/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.matrix/gameplay/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.matrix/gameplay/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.matrix/gameplay/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.matrix/gameplay/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.matrix/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.matrix/views/Interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.matrix/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.matrix/gameplay/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/gameplay/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.matrix/gameplay/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.matrix/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/views/GUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,62 +18,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app.matrix/gameplay/Matrix.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" selection-start-line="4" selection-end-line="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;method#Matrix#0;class#Matrix#0" />
-                <element signature="method#Matrix#0;class#Matrix#0" />
-                <element signature="docComment;method#get#0;class#Matrix#0" />
-                <element signature="docComment;method#set#0;class#Matrix#0" />
-                <element signature="docComment;method#left#0;class#Matrix#0" />
-                <element signature="docComment;class#MatrixCell#0" />
-                <element signature="class#MatrixCell#0" />
-                <element signature="docComment;method#MatrixCell#0;class#MatrixCell#0" />
-                <element signature="docComment;method#getValue#0;class#MatrixCell#0" />
-                <element signature="docComment;method#setValue#0;class#MatrixCell#0" />
-                <element signature="docComment;method#dub#0;class#MatrixCell#0" />
-                <element signature="docComment;method#clear#0;class#MatrixCell#0" />
-                <element signature="docComment;method#isNull#0;class#MatrixCell#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app.matrix/views/Interface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret column="18" selection-start-column="18" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app.matrix/App.java">
+        <entry file="file://$PROJECT_DIR$/src/app/matrix/views/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            <state relative-caret-position="473">
+              <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#193#194#0" expanded="true" />
-                <element signature="e#234#235#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app.matrix/gameplay/Game.java">
+        <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="153">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -102,11 +61,16 @@
         <option value="$PROJECT_DIR$/src/app.matrix/gameplay/Game.java" />
         <option value="$PROJECT_DIR$/src/app.matrix/views/GUI.java" />
         <option value="$PROJECT_DIR$/src/app.matrix/App.java" />
+        <option value="$PROJECT_DIR$/app.matrix/views/GUI.java" />
+        <option value="$PROJECT_DIR$/src/gameplay/Game.java" />
+        <option value="$PROJECT_DIR$/src/App.java" />
+        <option value="$PROJECT_DIR$/src/app/matrix/App.java" />
+        <option value="$PROJECT_DIR$/src/app/matrix/views/GUI.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="y" value="24" />
     <option name="width" value="1280" />
     <option name="height" value="1057" />
   </component>
@@ -115,7 +79,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -133,31 +96,43 @@
               <item name="matrix-2048" type="b2602c69:ProjectViewProjectNode" />
               <item name="matrix-2048" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app.matrix" type="462c0819:PsiDirectoryNode" />
+              <item name="matrix" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="matrix-2048" type="b2602c69:ProjectViewProjectNode" />
               <item name="matrix-2048" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app.matrix" type="462c0819:PsiDirectoryNode" />
+              <item name="matrix" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550632723062" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550635818642" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/app.matrix/gameplay" />
       <recent name="$PROJECT_DIR$/src/app.matrix/views" />
       <recent name="$PROJECT_DIR$/src/app.matrix" />
@@ -175,9 +150,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <module name="matrix-2048" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <module name="matrix-2048" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Game" />
+      <option name="MAIN_CLASS_NAME" value="app.matrix.gameplay.Game" />
       <module name="matrix-2048" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -185,6 +180,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.App (1)" />
         <item itemvalue="Application.Game" />
       </list>
     </recent_temporary>
@@ -204,6 +201,7 @@
       <workItem from="1550521660134" duration="3727000" />
       <workItem from="1550526439824" duration="355000" />
       <workItem from="1550630700654" duration="2023000" />
+      <workItem from="1550633000754" duration="1152000" />
     </task>
     <task id="LOCAL-00001" summary="Added game class">
       <created>1550522594666</created>
@@ -223,13 +221,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6212000" />
+    <option name="totallyTimeSpent" value="7364000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="1057" extended-state="0" />
+    <frame x="0" y="24" width="1280" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2786753" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28271407" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -238,7 +236,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3284974" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3284974" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -246,9 +244,9 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32943013" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3284974" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3284974" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32953367" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -269,17 +267,43 @@
     <option name="LAST_COMMIT_MESSAGE" value="game class updates and scoring implementations" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app.matrix/gameplay/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/app.matrix/views/Interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.matrix/gameplay/Matrix.java">
+    <entry file="file://$PROJECT_DIR$/src/gameplay/Matrix.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameplay/Game.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="4" selection-start-line="4" selection-end-line="5" />
+          <caret line="442" column="6" selection-start-line="442" selection-start-column="6" selection-end-line="442" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#Matrix#0;class#Matrix#0" />
@@ -288,7 +312,6 @@
             <element signature="docComment;method#set#0;class#Matrix#0" />
             <element signature="docComment;method#left#0;class#Matrix#0" />
             <element signature="docComment;class#MatrixCell#0" />
-            <element signature="class#MatrixCell#0" />
             <element signature="docComment;method#MatrixCell#0;class#MatrixCell#0" />
             <element signature="docComment;method#getValue#0;class#MatrixCell#0" />
             <element signature="docComment;method#setValue#0;class#MatrixCell#0" />
@@ -299,24 +322,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.matrix/views/Interface.java">
+    <entry file="file://$PROJECT_DIR$/src/app/matrix/views/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        <state relative-caret-position="473">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.matrix/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#193#194#0" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -324,9 +335,80 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>matrix-2048</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>10</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -1,5 +1,7 @@
 package app.matrix.views;
 
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -9,12 +11,13 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
 
     private final double width = 500, height = 500;
 
-    private JLabel title = new JLabel("MATRIX[]2048");
+    private JLabel title = new JLabel("MATRIX[]2048", SwingConstants.CENTER);
 
     public GUI() {
 
         setSize((int) width, (int) height);
         addComponents();
+        this.setVisible(true);
 
     }
 
@@ -45,7 +48,10 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
 
     private void addComponents() {
 
-        title.setVerticalAlignment(SwingConstants.CENTER);
+        title.setVerticalAlignment(SwingConstants.NORTH);
+
         title.setFont(new Font("SansSerif", Font.PLAIN, 24));
+        this.add(title);
+
     }
 }
