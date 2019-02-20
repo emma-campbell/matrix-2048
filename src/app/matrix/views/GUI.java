@@ -1,5 +1,8 @@
 package app.matrix.views;
 
+import app.matrix.views.infoPanel.TopPanel;
+import app.matrix.views.score.ScoreCenter;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,16 +12,15 @@ import java.awt.event.KeyListener;
 
 public class GUI extends JFrame implements ActionListener, KeyListener {
 
-    private final double width = 500, height = 500;
-    private ScoreKeeper score = new ScoreKeeper((int)((1.0/4.0) * width), (int)((1.0/5.0) * height));
-
-    private JLabel title = new JLabel("MATRIX[]2048", SwingConstants.CENTER);
+    private final double width = 485, height = 700;
+    private TopPanel top = new TopPanel();
 
     public GUI() {
 
         setSize((int) width, (int) height);
         addComponents();
         this.setVisible(true);
+        this.setResizable(false);
 
     }
 
@@ -49,11 +51,8 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
 
     private void addComponents() {
 
-        title.setVerticalAlignment(SwingConstants.NORTH);
-
-        title.setFont(new Font("SansSerif", Font.PLAIN, 24));
-        this.add(title);
-        this.add(score);
+        this.setLayout(new GridLayout(4, 1));
+        this.add(top);
 
     }
 }
