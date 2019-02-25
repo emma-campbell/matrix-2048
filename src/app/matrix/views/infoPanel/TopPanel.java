@@ -13,6 +13,7 @@ public class TopPanel extends JPanel {
     public TopPanel() {
         super();
         this.setLayout(new GridLayout(2,1));
+        this.setBackground(new Color(213, 202, 188));
         addComponents();
     }
 
@@ -22,7 +23,6 @@ public class TopPanel extends JPanel {
         title.setVerticalAlignment(SwingConstants.CENTER);
         title.setFont(new Font("SansSerif", Font.BOLD, 24));
         this.add(title);
-
         //adding scoreboard
         this.add(score);
     }

@@ -1,20 +1,38 @@
 package app.matrix.gameplay;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JPanel;
+import javax.swing.JComponent;
+import java.awt.Point;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.util.Random;
+
 
 /**
  * @author emma-campbell
  * @version 1.0
  * @since 2019-02-16
  */
-class Matrix extends JComponent {
+class Matrix extends JPanel {
 
     private Random r = new Random();
     private MatrixCell[][] matrix = new MatrixCell[4][4];
+
     private static final int NULL = 0;
     private int width, height;
+    private Point loc;
+
+    private boolean up = false;
+    private boolean down = false;
+    private boolean left = false;
+    private boolean right = true;
+
+    private boolean valid = false;
+    private boolean win = false;
+    private boolean lose = false;
+
+    private int max = 0;
 
     /**
      * Constructor that initializes the game board with all empty slots, then places two
@@ -33,7 +51,6 @@ class Matrix extends JComponent {
         this.width = width;
         this.height = height;
 
-        this.setLayout(new GridLayout(4,4));
     }
 
     /**
@@ -45,321 +62,298 @@ class Matrix extends JComponent {
      * @return integer value of matrix cell
      *
      */
-    int get(int i, int j) {
+    private int get(int i, int j) {
         return matrix[i][j].getValue();
     }
 
     /**
      * Sets the values of a cell at position i, j
-     *
-     * @param i index moving up and down
+     *  @param i index moving up and down
      * @param j index moving left to right
      * @param val integer value to set the cell to
      */
-    void set(int i, int j, int val) {
+    private void set(int i, int j, int val) {
         matrix[i][j].setValue(val);
     }
 
     /**
-     * Move all cells to the left
+     * Moves the tiles on the board
      */
-    int left() {
-        int point = slide(1);
-        System.out.println("left");
-        return point;
-    }
+    private void move() {
 
-    /**
-     * Validates the users move
-     *
-     * @param dir integer 1, 2, 3, or 4 representing left, right, up, and down respectively
-     * @return boolean true or false representing whether the user can move that way or not
-     */
-    boolean move(int dir) {
+        if (up) {
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (get(i, j) == 0 && get(i+1, j) != 0) {
 
-        if (areDups(dir)) {
-            System.out.println("valid");
-            return true; //if there are duplicates in the direction specified, then return true because you can move that way
-        }
+                        set(i, j, get(i+1, j));
+                        set(i+1, j, 0);
+                        valid = true;
+                    }
+                }
+            }
 
-        System.out.println("invalid");
-        return false; //no move in that direction
-    }
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (get(i, j) == 0 && get(i+1, j) != 0) {
 
-    /**
-     *
-     * @return boolean true or false representing if NULL values are in the matrix
-     */
-    boolean areNulls() {
+                        set(i, j, get(i+1, j));
+                        set(i+1, j, 0);
+                    }
+                }
+            }
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (matrix[i][j].getValue() == NULL) {
-                    return true;
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (get(i, j) ==  get(i+1, j) && get(i+1, j) != 0) {
+                        set(i, j, 2 * get(i, j));
+                        set(i+1, j, 0);
+                        valid = true;
+                    }
+                }
+            }
+
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (get(i, j) ==  0 && get(i+1, j) != 0) {
+                        set(i, j, get(i+1, j));
+                        set(i+1, j, 0);
+                    }
                 }
             }
         }
 
-        return false;
-    }
+        else if (down) {
 
-    /**
-     *
-     * @return boolean true or false indicating if there are possible moves remaining
-     */
-    boolean movesRemaining() {
-        for (int i = 1; i <= 4; i++) {
-
-            if (move(i) || areNulls()) {
-
-                //iterates thru each direction, if there are moves remaining in any direction (i.e. duplicates
-                //next to eachother in the array) this function will return true;
-                return true;
-            }
-        }
-
-        return false; //no moves remaining in any direction
-    }
-
-    /**
-     * Moves all cells to the right
-     */
-    int right() {
-        int point = slide(2);
-        System.out.println("right");
-        return point;
-    }
-
-    /**
-     * Moves all cells up
-     */
-    int up() {
-        int point = slide(3);
-        System.out.println("up");
-        return point;
-    }
-
-    /**
-     * Moves all cells down
-     */
-    int down() {
-        int point = slide(4);
-        System.out.println("down");
-        return point;
-    }
-
-    /**
-     * Slides all ties to a given direction and combines equivalent pieces
-     *
-     * @param dir the direction the user moves the board (1 -left, 2 - right, 3 - up, 4 -
-     *            down)
-     */
-    private int slide(int dir) {
-        boolean cont = true;
-
-        int points_to_add = 0;
-
-        if (dir == 1) {
-            for (MatrixCell[] row: matrix) {
-                do {
-                    for (int i = 0; i < row.length -1; i++) {
-                        //if cell is not NULL
-                        if (!(row[i].isNull())) {
-                            if (row[i].getValue() == row[i+1].getValue()) {
-                                row[i].dub();
-                                points_to_add += row[i].getValue();
-                                row[i+1].clear();
-
-                                int n = i + 1;
-
-                                while (n < row.length - 1) {
-                                    row[n].setValue(row[n + 1].getValue());
-                                    row[n+1].clear();
-                                    n += 1;
-                                }
-                                row[row.length -1].clear();
-                            }
-                        }
-                        else {
-                            int n = i+1;
-                            while (n <= row.length - 1 && n != -1) {
-                                if (row[n].getValue() == 0) {
-                                    n += 1;
-                                }
-                                else if ((row[n].getValue() != row[i].getValue()) && (row[i].getValue() == 0)) {
-                                    row[i].setValue(row[n].getValue());
-                                    row[n].clear();
-                                    n = -1;
-                                }
-                                else if (row[i].getValue() == row[n].getValue() && (row[i].getValue() != 0)){
-                                    row[i].dub();
-                                    points_to_add += row[i].getValue();
-                                    row[n].clear();
-                                    n = -1;
-                                }
-                            }
-                        }
+            for (int i = 3; i > 0; i--) {
+                for (int j = 0; j < 4; j++) {
+                    if (get(i, j) == 0 && get(i-1, j) != 0) {
+                        set(i, j, get(i-1, j));
+                        set(i-1, j, 0);
+                        valid = true;
                     }
-                } while (areDups(1));
+                }
+            }
+
+            for (int i =3; i > 0; i--) {
+                for (int j = 0; j < 4; j++) {
+                    if (get(i, j) == 0 && get(i-1, j) != 0) {
+                        set(i, j, get(i-1, j));
+                        set(i-1, j, 0);
+                    }
+                }
+            }
+
+            for (int i = 3; i > 0; i--) {
+                for (int j = 0; j < 4; j++) {
+                    if (get(i, j) == get(i-1, j) && get(i-1, j) != 0) {
+                        set(i, j, 2 * get(i, j));
+                        set(i-1, j, 0);
+                        valid = true;
+                    }
+                }
+            }
+
+            for (int i = 3; i > 0; i--) {
+                for (int j = 0; j < 4; j++) {
+                    if (get(i, j) == 0 && get(i - 1, j) != 0) {
+                        set(i, j, get(i - 1, j));
+                        set(i-1, j, 0);
+                    }
+                }
             }
         }
 
-        /*
-         * when @param dir is equivalent to the integer 2, the user has slide to
-         * the right.
-         */
-        if (dir == 2) {
+
+        else if (left) {
+
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (get(i, j) == 0 && get(i, j + 1) != 0) {
+                        set(i, j, get(i, j + 1));
+                        set(i, j + 1, 0);
+                        valid = true;
+                    }
+                }
+            }
+
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (get(i, j) == 0 && get(i, j + 1) != 0) {
+                        set(i, j, get(i, j + 1));
+                        set(i, j + 1, 0);
+                    }
+                }
+            }
+
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (get(i, j) == get(i, j + 1) && get(i, j + 1) != 0) {
+                        set(i, j, 2 * get(i, j));
+                        set(i, j + 1, 0);
+                        valid = true;
+                    }
+                }
+            }
+
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (get(i, j) == 0 && get(i, j + 1) != 0) {
+                        set(i, j, get(i, j + 1));
+                        set(i, j + 1, 0);
+                    }
+                }
+            }
+        }
+
+        else if (right) {
+
+            for (int i = 0; i < 4; i++) {
+                for (int j = 3; j > 0; j--) {
+                    if (get(i, j) == 0 && get(i, j- 1) != 0) {
+                        set(i, j, get(i, j-1));
+                        set(i, j-1, 0);
+                        valid = true;
+                    }
+                }
+            }
+
+            for (int i = 0; i < 4; i++) {
+                for (int j = 3; j > 0; j--) {
+                    if (get(i, j) == 0 && get(i, j- 1) != 0) {
+                        set(i, j, get(i, j-1));
+                        set(i, j-1, 0);
+                    }
+                }
+            }
+
+            for (int i = 0; i < 4; i++) {
+                for (int j = 3; j > 0; j--) {
+                    if (get(i, j) == get(i, j- 1) && get(i, j-1) != 0) {
+                        set(i, j, 2 * get(i, j-1));
+                        set(i, j-1, 0);
+                        valid = true;
+                    }
+                }
+            }
+
+            for (int i = 0; i < 4; i++) {
+                for (int j = 3; j > 0; j--) {
+                    if (get(i, j) == 0 && get(i, j- 1) != 0) {
+                        set(i, j, get(i, j-1));
+                        set(i, j-1, 0);
+                    }
+                }
+            }
+
+            if (!valid) {
+                System.out.println("Invalid move");
+            }
+            else {
+                System.out.println("Valid move");
+            }
+
             for (MatrixCell[] row : matrix) {
-                do {
-                    for (int i = row.length - 1; i > 0; i--) {
-                        //if cell is not NULL
-                        if (!(row[i].isNull())) {
-                            if (row[i].getValue() == row[i - 1].getValue()) {
-                                row[i].dub();
-                                points_to_add += row[i].getValue();
-                                row[i - 1].clear();
-
-                                int n = i - 1;
-
-                                while (n > 0) {
-                                    row[n].setValue(row[n - 1].getValue());
-                                    row[n - 1].clear();
-                                    n -= 1;
-                                }
-
-                            }
-                        } else {
-                            int n = i - 1;
-                            while (n >= 0) {
-                                if (row[n].getValue() == 0) {
-                                    n -= 1;
-                                } else if ((row[n].getValue() != row[i].getValue()) && (row[i].getValue() == 0)) {
-                                    row[i].setValue(row[n].getValue());
-                                    row[n].clear();
-                                    n = -1;
-                                }
-                                else if (row[i].getValue() == row[n].getValue() && (row[i].getValue() != 0)){
-                                    row[i].dub();
-                                    points_to_add += row[i].getValue();
-                                    row[n].clear();
-                                    n = -1;
-                                }
-                            }
-                        }
+                for (MatrixCell cell : row) {
+                    if (cell.getValue() > max) {
+                        max = cell.getValue();
                     }
-                } while (areDups(2));
+                }
+            }
+
+            if (max == 2048) {
+                win = true;
+            }
+        }
+    }
+
+    /**
+     *
+     * @return boolean representing if it is possible to continue
+     */
+    protected boolean movesRemaining() {
+
+        boolean moves = false;
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (get(i, j) == get(i+1, j)) {
+                    moves = true;
+                }
             }
         }
 
-        /*
-         * when @param dir is equivalent to the integer 3, the user has slid to
-         * top
-         */
-        if (dir == 3) {
-            do { // while there are no duplicates  next to each other in the row
-                int curr = 0;
-                int next = 0;
-                for (int j = matrix.length - 1; j > 0; j--) {
-                    for (int i = 0; i < matrix[j].length - 1; i++) {
-                        curr = matrix[i][j].getValue();
-                        next = matrix[i][j].getValue();
-
-                        if (!(matrix[i][j].isNull())) {
-
-                            if (curr == next) {
-                                matrix[i][j].dub();
-                                points_to_add += matrix[i][j].getValue();
-
-                                matrix[i+1][j].clear();
-
-                                int n = i + 1;
-                                while (n < matrix[j].length - 1) {
-                                    matrix[n][j].setValue(matrix[n+1][j].getValue());
-                                    matrix[n+1][j].clear();
-                                    n += 1;
-                                }
-                            }
-                        }
-                        else {
-                            int n = i + 1;
-                            while (n < matrix.length -1  && n >= 0) {
-                                if (matrix[n][j].getValue() == 0) {
-                                    n += 1;
-                                }
-                                else if (matrix[n][j].getValue() != matrix[i][j].getValue() && (matrix[n][j].getValue() != 0)) {
-                                    matrix[i][j].setValue(matrix[n][j].getValue());
-                                    matrix[n][j].clear();
-                                    n = -1;
-                                }
-                                else if (matrix[n][j].getValue() == matrix[i][j].getValue() && (matrix[n][j].getValue() != 0)) {
-                                    matrix[i][j].dub();
-                                    points_to_add += matrix[i][j].getValue();
-                                    matrix[n][j].clear();
-                                    n = -1;
-                                }
-                            }
-                        }
-                    }
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (get(i,j) == get(i, j+1)) {
+                    moves = true;
                 }
-            } while (areDups(3));
+            }
         }
 
-        /*
-         * when @param dir is equivalent to the integer 4, the user has slid to
-         * bottom
-         */
-        if (dir == 4) {
-
-            do {
-                int curr = 0;
-                int next = 0;
-
-                for (int j = matrix.length - 1; j >= 0; j--) {
-                    for (int i = matrix.length -1; i > 0; i--) {
-                        curr = matrix[i][j].getValue();
-                        next = matrix[i-1][j].getValue();
-
-                        if (!(matrix[i][j].isNull())) {
-                            if (curr == next) {
-                                matrix[i][j].dub();
-                                points_to_add += matrix[i][j].getValue();
-                                matrix[i-1][j].clear();
-
-                                int n = i - 1;
-
-                                while (n > 0) {
-                                    matrix[n][j].setValue(matrix[n-1][j].getValue());
-                                    matrix[n-1][j].clear();
-                                    n -= 1;
-                                }
-                            }
-                        }
-                        else {
-                            int n = i - 1;
-                            while (n >= 0) {
-                                if (matrix[n][j].isNull()) {
-                                    n -= 1;
-                                }
-                                else if (!(matrix[n][j].isNull())) {
-                                    matrix[i][j].setValue(matrix[n][j].getValue());
-                                    matrix[n][j].clear();
-                                    n = -1;
-                                }
-                                else if (matrix[n][j].getValue() != matrix[i][j].getValue() && (matrix[n][j].getValue() != 0)){
-                                    matrix[i][j].dub();
-                                    points_to_add += matrix[i][j].getValue();
-                                    matrix[n][j].clear();
-                                    n = -1;
-                                }
-                            }
-                        }
-                    }
-                }
-            } while(areDups(4));
-        }
-
-        return points_to_add;
+        return moves;
     }
+
+    void right() {
+
+        right = true;
+        left = false;
+        up = false;
+        down = false;
+
+        if (movesRemaining()) {
+            move();
+        }
+        else {
+            lose = true;
+        }
+    }
+
+    void left() {
+
+        right = false;
+        left = true;
+        up = false;
+        down = false;
+
+        if (movesRemaining()) {
+            move();
+        }
+        else {
+            lose = true;
+        }
+    }
+
+    void up() {
+
+        right = false;
+        left = false;
+        up = true;
+        down = false;
+
+        if (movesRemaining()) {
+            move();
+        }
+        else {
+            lose = true;
+        }
+    }
+
+    void down() {
+
+        right = false;
+        left = false;
+        up = false;
+        down = true;
+
+        if (movesRemaining()) {
+            move();
+        }
+        else {
+            lose = true;
+        }
+    }
+
 
     /**
      * Prints a formatted version of the matrix
@@ -370,19 +364,6 @@ class Matrix extends JComponent {
                 System.out.printf("%d\t", matrix[i][j].getValue());
             }
             System.out.println();
-        }
-    }
-
-    /**
-     * Method that sets the value to one for each of the cells. This method is mainly for
-     * testing purposes
-     *
-     */
-    void fill() {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j].setValue(1);
-            }
         }
     }
 
@@ -405,8 +386,8 @@ class Matrix extends JComponent {
     private boolean areDups(int dir) {
 
         if (dir == 1 || dir == 2) {
-            for (int i = matrix.length - 1; i > 0; i--) {
-                for (int j = 0; j < matrix[i].length - 1; j++) {
+            for (int i = 3; i > 0; i--) {
+                for (int j = 0; j < 3; j++) {
                     if (matrix[i][j].getValue() == matrix[i - 1][j].getValue() && !(matrix[i][j].isNull())) {
                         return true;
                     }
@@ -449,30 +430,41 @@ class Matrix extends JComponent {
     /* OVERRIDEN METHODS */
 
     @Override
-    public void paintComponent(Graphics g) {
+    public void paintComponents(Graphics g) {
         super.paintComponents(g);
+        g.setColor(new Color(3, 29, 68));
+        g.fillRect(loc.x,loc.y, width, height);
+    }
 
-        g.setColor(new Color(48, 92, 163));
-        g.fillRect(50, 0, width, height);
+    void drawBoard(Graphics g, int x, int y) {
+        loc = new Point(x, y);
+        int temp = x;
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                this.add(matrix[i][j]);
-                matrix[i][j].paintComponent(g);
+        this.paintComponents(g);
+        for (MatrixCell[] cells : matrix) {
+            for (MatrixCell cell : cells) {
+                cell.drawCell(g, x + 12, y + 22);
+                x += 90;
             }
+            x = temp;
+            y += 112;
         }
     }
+
 }
 
 /**
  * @author emma-campbell
- * @version 0.1
+ * @version 1.0
  * @since 2019-02-16
  */
+
 class MatrixCell extends JComponent {
 
+    private static final int HEIGHT = 100, WIDTH = 80;
     private static final int NULL = 0;
     private int value;
+    private Point loc;
 
     /**
      * Creates a new cell
@@ -513,10 +505,84 @@ class MatrixCell extends JComponent {
 
     @Override
     public void paintComponent(Graphics g) {
-         super.paintComponent(g);
 
-         g.setColor(new Color(221, 234, 255));
-         g.fillRect(0,0, 10, 10);
+        switch (value) {
+            case 0:
+                g.setColor(new Color(4, 57, 94));
+                break;
+            case 2:
+                g.setColor(new Color(112, 162, 136));
+                g.setFont(new Font("SansSerif", Font.BOLD, 48));
+                break;
+            case 4:
+                g.setColor(new Color(218, 183, 133));
+                g.setFont(new Font("SansSerif", Font.BOLD, 48));
+                break;
+            case 8:
+                g.setColor(new Color(213, 137, 111));
+                g.setFont(new Font("SansSerif", Font.BOLD, 48));
+                break;
+            case 16:
+                g.setColor(new Color(186, 63, 29));
+                g.setFont(new Font("SansSerif", Font.BOLD, 42));
+                break;
+            case 32:
+                g.setColor(new Color(69, 123, 157));
+                g.setFont(new Font("SansSerif", Font.BOLD, 42));
+                break;
+            case 64:
+                g.setColor(new Color(146, 173, 148));
+                g.setFont(new Font("SansSerif", Font.BOLD, 42));
+                break;
+            case 128:
+                g.setColor(new Color(26, 147, 111));
+                g.setFont(new Font("SansSerif", Font.BOLD, 36));
+                break;
+            case 256:
+                g.setColor(new Color(240, 200, 8));
+                g.setFont(new Font("SansSerif", Font.BOLD, 32));
+                break;
+            case 512:
+                g.setColor(new Color(240, 135, 0));
+                g.setFont(new Font("SansSerif", Font.BOLD, 32));
+                break;
+            case 1024:
+                g.setColor(new Color(217, 61, 57));
+                g.setFont(new Font("SansSerif", Font.BOLD, 28));
+                break;
+            case 2048:
+                g.setColor(new Color(101, 222, 241));
+                g.setFont(new Font("SansSerif", Font.BOLD, 28));
+                break;
+        }
+
+        g.fillRect(loc.x,loc.y, WIDTH, HEIGHT);
+
+        g.setColor(Color.WHITE);
+
+        if (value != 0) {
+            if (value < 10) {
+                g.drawString(String.valueOf(value), loc.x + 23, loc.y + 64);
+            }
+            else if (value > 10 && value < 50){
+                g.drawString(String.valueOf(value), loc.x + 16, loc.y + 64);
+            }
+            else if (value > 50 && value < 100){
+                g.drawString(String.valueOf(value), loc.x + 14, loc.y + 64);
+            }
+            else if (value > 100 && value < 1000){
+                g.drawString(String.valueOf(value), loc.x + 4 , loc.y + 60);
+            }
+            else {
+                g.drawString(String.valueOf(value), loc.x, loc.y + 60);
+            }
+        }
+
+    }
+
+    void drawCell(Graphics g, int x, int y) {
+        loc = new Point(x, y);
+        this.paintComponent(g);
     }
 }
 
