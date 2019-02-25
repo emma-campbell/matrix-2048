@@ -1,7 +1,6 @@
 package app.matrix.gameplay;
 
-import javax.swing.JPanel;
-import javax.swing.JComponent;
+import javax.swing.*;
 import java.awt.Point;
 import java.awt.Color;
 import java.awt.Font;
@@ -29,8 +28,6 @@ class Matrix extends JPanel {
     private boolean right = true;
 
     private boolean valid = false;
-    private boolean win = false;
-    private boolean lose = false;
 
     private int max = 0;
 
@@ -253,18 +250,65 @@ class Matrix extends JPanel {
                 System.out.println("Valid move");
             }
 
-            for (MatrixCell[] row : matrix) {
-                for (MatrixCell cell : row) {
-                    if (cell.getValue() > max) {
-                        max = cell.getValue();
-                    }
+        }
+    }
+
+    public void up() {
+        up = true;
+        down = false;
+        left = false;
+        right = false;
+
+        move();
+    }
+
+    public void down() {
+        up = false;
+        down = true;
+        left = false;
+        right = false;
+
+        move();
+    }
+
+    public void left() {
+        up = false;
+        down = false;
+        left = true;
+        right = false;
+
+        move();
+    }
+
+    public void right() {
+        up = false;
+        down = false;
+        left = false;
+        right = true;
+
+        move();
+    }
+
+    /**
+     *
+     * @return int number of null tiles
+     */
+    public int countNull() {
+
+        int empty = 0;
+
+        for (int i = 0; i < 4; i ++) {
+            for (int j = 0; j < 4; j++) {
+                if (get(i, j) != 0) {
+                    continue;
+                }
+                else {
+                    empty += 1;
                 }
             }
-
-            if (max == 2048) {
-                win = true;
-            }
         }
+
+        return empty;
     }
 
     /**
@@ -291,69 +335,15 @@ class Matrix extends JPanel {
             }
         }
 
+        if (countNull() > 0) {
+            moves = true;
+        }
+        else if (countNull() == 0 && !moves) {
+            moves = false;
+        }
+
         return moves;
     }
-
-    void right() {
-
-        right = true;
-        left = false;
-        up = false;
-        down = false;
-
-        if (movesRemaining()) {
-            move();
-        }
-        else {
-            lose = true;
-        }
-    }
-
-    void left() {
-
-        right = false;
-        left = true;
-        up = false;
-        down = false;
-
-        if (movesRemaining()) {
-            move();
-        }
-        else {
-            lose = true;
-        }
-    }
-
-    void up() {
-
-        right = false;
-        left = false;
-        up = true;
-        down = false;
-
-        if (movesRemaining()) {
-            move();
-        }
-        else {
-            lose = true;
-        }
-    }
-
-    void down() {
-
-        right = false;
-        left = false;
-        up = false;
-        down = true;
-
-        if (movesRemaining()) {
-            move();
-        }
-        else {
-            lose = true;
-        }
-    }
-
 
     /**
      * Prints a formatted version of the matrix
@@ -413,19 +403,24 @@ class Matrix extends JPanel {
      * Places a cell with a value of 2 or 0 where there is a null space in the matrix
      */
     void placeRandom() {
+        boolean placed = false;
 
-        int val = 2 * (r.nextInt(2) + 1);
-        int i = (r.nextInt(4));
-        int j = (r.nextInt(4));
+        while (!placed) {
 
-        while (!(matrix[i][j]).isNull()) {
-            i = (r.nextInt(4));
-            j = (r.nextInt(4));
+            int val = 2 * (r.nextInt(2) + 1);
+            int i = (r.nextInt(4));
+            int j = (r.nextInt(4));
+
+            if (matrix[i][j].isNull()) {
+                matrix[i][j] = new MatrixCell(val);
+                System.out.println("Piece placed");
+                return;
+            }
+
         }
 
-        matrix[i][j] = new MatrixCell(val);
-        System.out.println("Piece placed");
     }
+
 
     /* OVERRIDEN METHODS */
 
@@ -570,8 +565,11 @@ class MatrixCell extends JComponent {
             else if (value > 50 && value < 100){
                 g.drawString(String.valueOf(value), loc.x + 14, loc.y + 64);
             }
-            else if (value > 100 && value < 1000){
-                g.drawString(String.valueOf(value), loc.x + 4 , loc.y + 60);
+            else if (value > 100 && value < 150) {
+                g.drawString(String.valueOf(value), loc.x + 4, loc.y + 60);
+            }
+            else if (value > 150 && value < 1000){
+                g.drawString(String.valueOf(value), loc.x + 6 , loc.y + 60);
             }
             else {
                 g.drawString(String.valueOf(value), loc.x, loc.y + 60);

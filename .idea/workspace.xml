@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c93ed01f-ee3f-4c2b-84b7-abd91b1fd524" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/matrix/views/score/Lost.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/gameplay/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/gameplay/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/gameplay/Matrix.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/gameplay/Matrix.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/gameplay/MatrixCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/gameplay/MatrixCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/infoPanel/TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/infoPanel/TopPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/score/BestScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/score/BestScore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/score/ScoreBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/score/ScoreBlock.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/matrix/gameplay/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/gameplay/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/matrix/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/views/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/matrix/views/infoPanel/TopPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/views/infoPanel/TopPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/matrix/views/score/ScoreCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/views/score/ScoreCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/matrix/views/score/Lost.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,7 +22,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/matrix/views/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
+            <state relative-caret-position="697">
               <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="42" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -41,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+            <state relative-caret-position="258">
+              <caret line="80" selection-start-line="80" selection-end-line="80" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Game#0" />
@@ -58,23 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5520">
-              <caret line="567" column="62" selection-start-line="567" selection-start-column="62" selection-end-line="567" selection-end-column="62" />
-              <folding>
-                <element signature="method#move#0;class#Matrix#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/matrix/views/score/Lost.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            <state relative-caret-position="472">
+              <caret line="570" column="33" selection-start-line="570" selection-start-column="33" selection-end-line="570" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -114,10 +95,12 @@
         <option value="$PROJECT_DIR$/src/app/matrix/views/score/Score.java" />
         <option value="$PROJECT_DIR$/src/app/matrix/views/GUI.java" />
         <option value="$PROJECT_DIR$/src/app/matrix/views/infoPanel/TopPanel.java" />
-        <option value="$PROJECT_DIR$/src/app/matrix/gameplay/Game.java" />
         <option value="$PROJECT_DIR$/src/app/matrix/views/score/ScoreCenter.java" />
-        <option value="$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java" />
         <option value="$PROJECT_DIR$/src/app/matrix/views/score/Lost.java" />
+        <option value="$PROJECT_DIR$/src/app/matrix/views/score/LostW.java" />
+        <option value="$PROJECT_DIR$/src/app/matrix/views/score/LostWindow.java" />
+        <option value="$PROJECT_DIR$/src/app/matrix/gameplay/Game.java" />
+        <option value="$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java" />
       </list>
     </option>
   </component>
@@ -131,6 +114,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -176,13 +160,12 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551056367496" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551058749780" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -286,7 +269,8 @@
       <workItem from="1550678193123" duration="1948000" />
       <workItem from="1550885022518" duration="640000" />
       <workItem from="1551027263618" duration="4282000" />
-      <workItem from="1551031771581" duration="16379000" />
+      <workItem from="1551031771581" duration="19346000" />
+      <workItem from="1551059605775" duration="2185000" />
     </task>
     <task id="LOCAL-00001" summary="Added game class">
       <created>1550522594666</created>
@@ -306,13 +290,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38784000" />
+    <option name="totallyTimeSpent" value="43936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49905482" visible="true" weight="0.30048466" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49905482" visible="true" weight="0.30533117" />
       <window_info id="Structure" order="1" sideWeight="0.50094515" side_tool="true" weight="0.26609442" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -321,7 +305,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31295338" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31295338" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2955414" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -329,9 +313,9 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32943013" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32611465" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3253886" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3299363" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32866243" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3284974" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -380,16 +364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/matrix/views/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="42" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/matrix/views/score/ScoreCenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
@@ -410,10 +384,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/matrix/views/score/LostWindow.java" />
+    <entry file="file://$PROJECT_DIR$/src/app/matrix/views/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="42" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+        <state relative-caret-position="258">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Game#0" />
@@ -430,18 +415,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5520">
-          <caret line="567" column="62" selection-start-line="567" selection-start-column="62" selection-end-line="567" selection-end-column="62" />
-          <folding>
-            <element signature="method#move#0;class#Matrix#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/matrix/views/score/Lost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state relative-caret-position="472">
+          <caret line="570" column="33" selection-start-line="570" selection-start-column="33" selection-end-line="570" selection-end-column="33" />
         </state>
       </provider>
     </entry>
