@@ -28,6 +28,9 @@ public class GUI extends JFrame implements KeyListener {
     private final int a = KeyEvent.VK_A;
     private final int d = KeyEvent.VK_D;
 
+    private final int q = KeyEvent.VK_Q;
+    private final int r = KeyEvent.VK_R;
+
     private final double width = 500, height = 700;
     private Game game = new Game();
 
@@ -40,14 +43,15 @@ public class GUI extends JFrame implements KeyListener {
         addComponents();
         this.setVisible(true);
         this.setResizable(false); //window is fixed (to make graphic implementation easier)
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         addKeyListener(this); //to get user inut
     }
 
     @Override
     public void paintComponents(Graphics g) {
         super.paintComponents(g);
-        g.setColor(new Color(255, 217, 170));
-        g.fillRect(0,0, (int)width, (int)height);
+        g.setColor(new Color(213, 202, 188));
+        g.fillRect(0,0, (int)width , (int)height);
     }
 
     /**
@@ -86,6 +90,8 @@ public class GUI extends JFrame implements KeyListener {
      * @param e KeyEvent.getKeyCode();
      */
     public void updateBoard(int e) {
+        int cont;
+
         switch (e) {
             case s:
                 game.swipeDown();
@@ -110,6 +116,22 @@ public class GUI extends JFrame implements KeyListener {
                 break;
             case right:
                 game.swipeRight();
+                break;
+            case q:
+                cont = JOptionPane.showOptionDialog(null, "Are you sure you'd like to quit? All your progress will be lost.",
+                        "Are you sure?", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+
+                if (cont == JOptionPane.YES_OPTION) {
+                    System.exit(0);
+                }
+                break;
+            case r:
+                cont = JOptionPane.showOptionDialog(null, "Are you sure you'd like to restart? All your progress will be lost.",
+                        "Are you sure?", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+
+                if (cont == JOptionPane.YES_OPTION) {
+                    game.restart(true);
+                }
                 break;
         }
     }
