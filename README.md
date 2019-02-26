@@ -37,5 +37,6 @@ java App
 
 
 ### Contact Info
-Emma Campbel
-ecampb10@u.rochester.edu
+
+> Emma Campbell
+> ecampb10@u.rochester.edu
