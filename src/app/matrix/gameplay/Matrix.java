@@ -91,7 +91,7 @@ class Matrix extends JPanel {
      * @param j index moving left to right
      * @param val integer value to set the cell to
      */
-    private void set(int i, int j, int val) {
+    void set(int i, int j, int val) {
         matrix[i][j].setValue(val);
     }
 
@@ -453,6 +453,26 @@ class Matrix extends JPanel {
         }
     }
 
+
+    /**
+     * Gets the maximum value in the array
+     *
+     * @return max value
+     */
+    public int getMax() {
+        int max = 0;
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (get(i,j) > max) {
+                    max = get(i, j);
+                }
+            }
+        }
+
+        return max;
+    }
+
     /**
      * Returns whether there are duplications traveling across the matrix in the given
      * direction.
@@ -492,15 +512,23 @@ class Matrix extends JPanel {
     void placeRandom() {
         boolean placed = false;
 
+        int randnum;
+
+        if (r.nextDouble() < 0.8) {
+            randnum = 2;
+        }
+        else {
+            randnum = 4;
+        }
+
         while (!placed) {
 
-            int val = 2 * (r.nextInt(2) + 1);
             int i = (r.nextInt(4));
             int j = (r.nextInt(4));
 
             if (matrix[i][j].isNull()) {
-                matrix[i][j] = new MatrixCell(val);
-                System.out.println("Piece placed");
+                matrix[i][j] = new MatrixCell(randnum);
+//                System.out.println("Piece placed");
                 return;
             }
 
@@ -514,17 +542,12 @@ class Matrix extends JPanel {
      * @return boolean has won
      */
     public boolean hasWon() {
-        int max = 0;
 
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                if (get(i,j) > max ) {
-                    max = get(i,j);
-                }
-            }
+        if (getMax() == 2048) {
+            return true;
         }
 
-        return max >= 2048;
+        return false;
     }
 
     /* OVERRIDEN METHODS */
@@ -532,6 +555,7 @@ class Matrix extends JPanel {
     @Override
     public void paintComponents(Graphics g) {
         super.paintComponents(g);
+        this.setBackground(new Color(213, 202, 188));
         g.setColor(new Color(3, 29, 68));
         g.fillRect(loc.x,loc.y, width, height);
     }

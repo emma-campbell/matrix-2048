@@ -96,7 +96,15 @@ public class ScoreCenter extends JComponent {
         else {
             currScore.clear();
         }
+    }
 
+    /**
+     * Resets the score to the passed in value
+     *
+     * @param points new score to be set
+     */
+    public void setScore(int points) {
+        currScore.set(points);
     }
 
    @Override
@@ -151,6 +159,13 @@ class ScoreBlock extends JComponent {
      */
     int get() {
         return score;
+    }
+
+    /**
+     * Set the value of score
+     */
+    void set(int score) {
+        this.score = score;
     }
 
     /**

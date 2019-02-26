@@ -30,7 +30,24 @@ public class TopPanel extends JPanel {
     }
 
     /**
-     * Resets the score board
+     * Resets the score (after user choses to reset)
+     */
+    public void resetScore() {
+        setBest(0);
+        setScore(0);
+    }
+
+    /**
+     * Sets the value of current score
+     *
+     * @param val new score to be set
+     */
+    public void setScore(int val) {
+        score.setScore(val);
+    }
+
+    /**
+     * Resets the score board (after loss)
      */
     public void reset() {
         score.reset();
