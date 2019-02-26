@@ -7,7 +7,6 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.util.Random;
 
-
 /**
  * @author emma-campbell
  * @version 1.0
@@ -29,8 +28,6 @@ class Matrix extends JPanel {
 
     private boolean valid = false;
 
-    private int max = 0;
-
     /**
      * Constructor that initializes the game board with all empty slots, then places two
      * random tiles in random places
@@ -48,6 +45,25 @@ class Matrix extends JPanel {
         this.width = width;
         this.height = height;
 
+    }
+
+    /**
+     * Creates a NEW instance of MatrixCell[][] and copys the values of matrix to it for
+     * comparison
+     *
+     * @return a copy of the private array matrix, used to determine if the move was valid
+     * or not
+     */
+    private MatrixCell[][] createCopy() {
+        MatrixCell[][] newArr = new MatrixCell[4][4];
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                newArr[i][j] = new MatrixCell(get(i,j));
+            }
+        }
+
+        return newArr;
     }
 
     /**
@@ -76,16 +92,18 @@ class Matrix extends JPanel {
     /**
      * Moves the tiles on the board
      */
-    private void move() {
+    private int move() {
+        int points = 0;
+
+        MatrixCell[][] copy = createCopy(); //copy to compare if move was valid
+
 
         if (up) {
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 4; j++) {
                     if (get(i, j) == 0 && get(i+1, j) != 0) {
-
                         set(i, j, get(i+1, j));
                         set(i+1, j, 0);
-                        valid = true;
                     }
                 }
             }
@@ -104,8 +122,8 @@ class Matrix extends JPanel {
                 for (int j = 0; j < 4; j++) {
                     if (get(i, j) ==  get(i+1, j) && get(i+1, j) != 0) {
                         set(i, j, 2 * get(i, j));
+                        points += get(i, j);
                         set(i+1, j, 0);
-                        valid = true;
                     }
                 }
             }
@@ -127,7 +145,6 @@ class Matrix extends JPanel {
                     if (get(i, j) == 0 && get(i-1, j) != 0) {
                         set(i, j, get(i-1, j));
                         set(i-1, j, 0);
-                        valid = true;
                     }
                 }
             }
@@ -145,8 +162,8 @@ class Matrix extends JPanel {
                 for (int j = 0; j < 4; j++) {
                     if (get(i, j) == get(i-1, j) && get(i-1, j) != 0) {
                         set(i, j, 2 * get(i, j));
+                        points += get(i, j);
                         set(i-1, j, 0);
-                        valid = true;
                     }
                 }
             }
@@ -169,7 +186,6 @@ class Matrix extends JPanel {
                     if (get(i, j) == 0 && get(i, j + 1) != 0) {
                         set(i, j, get(i, j + 1));
                         set(i, j + 1, 0);
-                        valid = true;
                     }
                 }
             }
@@ -187,8 +203,8 @@ class Matrix extends JPanel {
                 for (int j = 0; j < 3; j++) {
                     if (get(i, j) == get(i, j + 1) && get(i, j + 1) != 0) {
                         set(i, j, 2 * get(i, j));
+                        points += get(i, j);
                         set(i, j + 1, 0);
-                        valid = true;
                     }
                 }
             }
@@ -210,7 +226,6 @@ class Matrix extends JPanel {
                     if (get(i, j) == 0 && get(i, j- 1) != 0) {
                         set(i, j, get(i, j-1));
                         set(i, j-1, 0);
-                        valid = true;
                     }
                 }
             }
@@ -228,8 +243,8 @@ class Matrix extends JPanel {
                 for (int j = 3; j > 0; j--) {
                     if (get(i, j) == get(i, j- 1) && get(i, j-1) != 0) {
                         set(i, j, 2 * get(i, j-1));
+                        points += get(i,j);
                         set(i, j-1, 0);
-                        valid = true;
                     }
                 }
             }
@@ -242,51 +257,75 @@ class Matrix extends JPanel {
                     }
                 }
             }
-
-            if (!valid) {
-                System.out.println("Invalid move");
-            }
-            else {
-                System.out.println("Valid move");
-            }
-
         }
+
+        if (compareArr(copy)) {
+            valid = true;
+            System.out.println("Valid move");
+        }
+        else {
+            valid = false;
+            System.out.println("Invalid move");
+            matrix = copy;
+        }
+
+        return points;
     }
 
-    public void up() {
+    boolean getValid() {return valid;}
+
+    private boolean compareArr(MatrixCell[][] other) {
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+
+                int val1 = matrix[i][j].getValue();
+                int val2 = other[i][j].getValue();
+
+                if (val1 != val2) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+
+    int up() {
         up = true;
         down = false;
         left = false;
         right = false;
 
-        move();
+        return move();
     }
 
-    public void down() {
+    int down() {
         up = false;
         down = true;
         left = false;
         right = false;
 
-        move();
+        return move();
     }
 
-    public void left() {
+    int left() {
         up = false;
         down = false;
         left = true;
         right = false;
 
-        move();
+        return move();
     }
 
-    public void right() {
+    int right() {
         up = false;
         down = false;
         left = false;
         right = true;
 
-        move();
+        return move();
     }
 
     /**
@@ -299,10 +338,7 @@ class Matrix extends JPanel {
 
         for (int i = 0; i < 4; i ++) {
             for (int j = 0; j < 4; j++) {
-                if (get(i, j) != 0) {
-                    continue;
-                }
-                else {
+                if (get(i, j) == 0) {
                     empty += 1;
                 }
             }
@@ -421,6 +457,23 @@ class Matrix extends JPanel {
 
     }
 
+    /**
+     *
+     * @return
+     */
+    public boolean hasWon() {
+        int max = 0;
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (get(i,j) > max ) {
+                    max = get(i,j);
+                }
+            }
+        }
+
+        return max >= 2048;
+    }
 
     /* OVERRIDEN METHODS */
 
@@ -432,18 +485,23 @@ class Matrix extends JPanel {
     }
 
     void drawBoard(Graphics g, int x, int y) {
+
         loc = new Point(x, y);
         int temp = x;
 
         this.paintComponents(g);
-        for (MatrixCell[] cells : matrix) {
-            for (MatrixCell cell : cells) {
+
+        for (MatrixCell[] row : matrix) {
+            //for each row
+            for (MatrixCell cell : row) {
                 cell.drawCell(g, x + 12, y + 22);
                 x += 90;
             }
+
             x = temp;
             y += 112;
         }
+
     }
 
 }

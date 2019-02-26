@@ -1,7 +1,7 @@
 package app.matrix.views;
 
 import app.matrix.gameplay.Game;
-import app.matrix.views.infoPanel.TopPanel;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,7 +22,6 @@ public class GUI extends JFrame implements KeyListener {
     private final int d = KeyEvent.VK_D;
 
     private final double width = 500, height = 700;
-    private TopPanel top = new TopPanel();
     private Game game = new Game();
 
     public GUI() {
@@ -44,11 +43,7 @@ public class GUI extends JFrame implements KeyListener {
     }
 
     private void addComponents() {
-
-        this.setLayout(new BorderLayout());
-        this.add(top, BorderLayout.NORTH);
         this.add(game, BorderLayout.CENTER);
-
     }
 
     @Override

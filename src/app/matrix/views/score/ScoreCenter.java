@@ -33,6 +33,30 @@ public class ScoreCenter extends JComponent {
         this.center = center;
     }
 
+    public void addPoints(int points) {
+        currScore.add(points);
+    }
+
+
+    public void setBest(int score) {
+        best.setBest(score);
+    }
+
+    public void reset() {
+
+        int bestval = best.get();
+        int currval = currScore.get();
+
+        if (bestval < currval) {
+            best.setBest(currval);
+            currScore.clear();
+        }
+        else {
+            currScore.clear();
+        }
+
+    }
+
    @Override
    public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -60,6 +84,15 @@ class ScoreBlock extends JComponent {
         repaint();
     }
 
+    public int get() {
+        return score;
+    }
+
+    public void clear() {
+        score = 0;
+        repaint();
+    }
+
     @Override
     protected void paintComponent(Graphics g) {
 
@@ -73,10 +106,30 @@ class ScoreBlock extends JComponent {
         g.setFont(new Font("SansSerif", Font.BOLD, 12));
         g.drawString("SCORE", loc.x + 13, loc.y + 14);
 
-
-        g.setFont(new Font("SansSerif", Font.BOLD, 24));
-        g.drawString(String.valueOf(score), loc.x + 26, loc.y + 40);
-
+        if (score < 10) {
+            g.setFont(new Font("SansSerif", Font.BOLD, 24));
+            g.drawString(String.valueOf(score), loc.x + 26, loc.y + 40);
+        }
+        else if (score > 10 && score < 100) {
+            g.setFont(new Font("SansSerif", Font.BOLD, 22));
+            g.drawString(String.valueOf(score), loc.x + 20, loc.y + 40);
+        }
+        else if (score > 100 && score < 1000) {
+            g.setFont(new Font("SansSerif", Font.BOLD, 20));
+            g.drawString(String.valueOf(score), loc.x + 14, loc.y + 40);
+        }
+        else if (score > 1000 && score < 10000) {
+            g.setFont(new Font("SansSerif", Font.BOLD, 18));
+            g.drawString(String.valueOf(score), loc.x + 10, loc.y + 40);
+        }
+        else if (score > 10000 && score < 100000) {
+            g.setFont(new Font("SansSerif", Font.BOLD, 14));
+            g.drawString(String.valueOf(score), loc.x + 12, loc.y + 38);
+        }
+        else {
+            g.setFont(new Font("SansSerif", Font.BOLD, 22));
+            g.drawString(String.valueOf(score), loc.x + 5, loc.y + 40);
+        }
     }
 }
 
@@ -97,6 +150,9 @@ class BestScore extends JComponent {
         this.score = score;
     }
 
+    public int get() {
+        return score;
+    }
 
     @Override
     public void paintComponent(Graphics g) {
@@ -110,7 +166,29 @@ class BestScore extends JComponent {
         g.setFont(new Font("SansSerif", Font.BOLD, 12));
         g.drawString("BEST", loc.x + 20, loc.y + 14);
 
-        g.setFont(new Font("SansSerif", Font.BOLD, 24));
-        g.drawString(String.valueOf(score), loc.x + 26, loc.y + 40);
+        if (score < 10) {
+            g.setFont(new Font("SansSerif", Font.BOLD, 24));
+            g.drawString(String.valueOf(score), loc.x + 26, loc.y + 40);
+        }
+        else if (score > 10 && score < 100) {
+            g.setFont(new Font("SansSerif", Font.BOLD, 22));
+            g.drawString(String.valueOf(score), loc.x + 20, loc.y + 40);
+        }
+        else if (score > 100 && score < 1000) {
+            g.setFont(new Font("SansSerif", Font.BOLD, 20));
+            g.drawString(String.valueOf(score), loc.x + 14, loc.y + 40);
+        }
+        else if (score > 1000 && score < 10000) {
+            g.setFont(new Font("SansSerif", Font.BOLD, 18));
+            g.drawString(String.valueOf(score), loc.x + 10, loc.y + 40);
+        }
+        else if (score > 10000 && score < 100000) {
+            g.setFont(new Font("SansSerif", Font.BOLD, 14));
+            g.drawString(String.valueOf(score), loc.x + 14, loc.y + 40);
+        }
+        else {
+            g.setFont(new Font("SansSerif", Font.BOLD, 22));
+            g.drawString(String.valueOf(score), loc.x + 5, loc.y + 40);
+        }
     }
 }
