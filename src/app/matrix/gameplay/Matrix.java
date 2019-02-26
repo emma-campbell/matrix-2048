@@ -8,24 +8,30 @@ import java.awt.Graphics;
 import java.util.Random;
 
 /**
+ * This is the method where all the action happens. This is the game board at it's core,
+ * and extension of JPanel for visualization. All this is, barebones, is the behvaior of
+ * the 2048 board.
+ *
  * @author emma-campbell
  * @version 1.0
  * @since 2019-02-16
  */
 class Matrix extends JPanel {
 
-    private Random r = new Random();
-    private MatrixCell[][] matrix = new MatrixCell[4][4];
+    private Random r = new Random(); //placing a new tile
+    private MatrixCell[][] matrix = new MatrixCell[4][4]; //the prim** matrix object
 
-    private static final int NULL = 0;
-    private int width, height;
-    private Point loc;
+    private static final int NULL = 0; //just to make code prettier
+    private int width, height; //of the matrix visual
+    private Point loc; //of the matrix visual
 
+    // these booleans tell which direction to swipe
     private boolean up = false;
     private boolean down = false;
     private boolean left = false;
     private boolean right = true;
 
+    // shows if a move was valid or not
     private boolean valid = false;
 
     /**
@@ -272,8 +278,24 @@ class Matrix extends JPanel {
         return points;
     }
 
+    /**
+     * Returns if the last move was valid
+     *
+     * @return boolean true or false
+     */
     boolean getValid() {return valid;}
 
+    /**
+     * Compares the copy of the matrix to the real object after move() is called. This will
+     * show us if a move is valid or not (essentially [not] triggering the addition of a new
+     * tile). If the copy of the array has all the same values in the same locations as the
+     * matrix variable, then this method will return false;
+     *
+     * Otherwise, if the copy is different than the current object, it will return true.
+     *
+     * @param other copy of matrix
+     * @return boolean true or false
+     */
     private boolean compareArr(MatrixCell[][] other) {
 
         for (int i = 0; i < 4; i++) {
@@ -291,7 +313,13 @@ class Matrix extends JPanel {
         return false;
     }
 
+    /* METHODS ACCESSED IN GAME */
 
+    /**
+     * Moves the board up
+     *
+     * @return total points scored
+     */
     int up() {
         up = true;
         down = false;
@@ -301,6 +329,11 @@ class Matrix extends JPanel {
         return move();
     }
 
+    /**
+     * Moves the board down
+     *
+     * @return total points scored
+     */
     int down() {
         up = false;
         down = true;
@@ -310,6 +343,11 @@ class Matrix extends JPanel {
         return move();
     }
 
+    /**
+     * Moves the board left
+     *
+     * @return total points scored
+     */
     int left() {
         up = false;
         down = false;
@@ -319,6 +357,11 @@ class Matrix extends JPanel {
         return move();
     }
 
+    /**
+     * Moves the board right
+     *
+     * @return total points scored
+     */
     int right() {
         up = false;
         down = false;
@@ -329,6 +372,7 @@ class Matrix extends JPanel {
     }
 
     /**
+     * Counts the number of tiles that are null
      *
      * @return int number of null tiles
      */
@@ -338,7 +382,7 @@ class Matrix extends JPanel {
 
         for (int i = 0; i < 4; i ++) {
             for (int j = 0; j < 4; j++) {
-                if (get(i, j) == 0) {
+                if (get(i, j) == NULL) {
                     empty += 1;
                 }
             }
@@ -348,6 +392,9 @@ class Matrix extends JPanel {
     }
 
     /**
+     * Returns boolean true or false showing if there are any moves remaining on the board.
+     * Condition for no more moves is that there are no null tiles on the board, and there are
+     * no duplicates scaning the board up and down AND left to right.
      *
      * @return boolean representing if it is possible to continue
      */
@@ -383,6 +430,8 @@ class Matrix extends JPanel {
 
     /**
      * Prints a formatted version of the matrix
+     *
+     * Goes unused in console due to GUI
      */
     void print() {
         for (int i = 0; i < 4; i++) {
@@ -405,6 +454,8 @@ class Matrix extends JPanel {
     }
 
     /**
+     * Returns whether there are duplications traveling across the matrix in the given
+     * direction.
      *
      * @param dir integer representing direction of travel
      * @return boolean true or false
@@ -436,7 +487,7 @@ class Matrix extends JPanel {
     }
 
     /**
-     * Places a cell with a value of 2 or 0 where there is a null space in the matrix
+     * Places a cell with a value of 2 or 4 where there is a null space in the matrix
      */
     void placeRandom() {
         boolean placed = false;
@@ -458,8 +509,9 @@ class Matrix extends JPanel {
     }
 
     /**
+     * Returns whether the user has won or not
      *
-     * @return
+     * @return boolean has won
      */
     public boolean hasWon() {
         int max = 0;
@@ -484,6 +536,13 @@ class Matrix extends JPanel {
         g.fillRect(loc.x,loc.y, width, height);
     }
 
+    /**
+     * Draws the board at some given coordinates
+     *
+     * @param g Graphics g
+     * @param x x coordinate
+     * @param y y coordinate
+     */
     void drawBoard(Graphics g, int x, int y) {
 
         loc = new Point(x, y);
@@ -521,6 +580,7 @@ class MatrixCell extends JComponent {
 
     /**
      * Creates a new cell
+     *
      * @param value Integer value to be displayed by the cell
      */
     MatrixCell(int value) {
@@ -529,11 +589,13 @@ class MatrixCell extends JComponent {
 
     /**
      * Returns the value of the cell
+     *
      * @return the integer value of the cell
      */
     int getValue() { return this.value; }
 
     /**
+     * Sets the value of the cell
      *
      * @param value Integer value of the cell
      */
@@ -558,7 +620,9 @@ class MatrixCell extends JComponent {
 
     @Override
     public void paintComponent(Graphics g) {
-
+        /*
+         * Switch statment to determine color of tile
+         */
         switch (value) {
             case 0:
                 g.setColor(new Color(4, 57, 94));
@@ -609,10 +673,13 @@ class MatrixCell extends JComponent {
                 break;
         }
 
+        //draw tile
         g.fillRect(loc.x,loc.y, WIDTH, HEIGHT);
 
+        //reset for text label
         g.setColor(Color.WHITE);
 
+        //determine font sized based on value of cell
         if (value != 0) {
             if (value < 10) {
                 g.drawString(String.valueOf(value), loc.x + 23, loc.y + 64);
@@ -636,6 +703,13 @@ class MatrixCell extends JComponent {
 
     }
 
+    /**
+     * Draws the cell at given coordinates
+     *
+     * @param g Graphics g
+     * @param x x coordinate
+     * @param y y coordinate
+     */
     void drawCell(Graphics g, int x, int y) {
         loc = new Point(x, y);
         this.paintComponent(g);

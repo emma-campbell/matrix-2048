@@ -4,7 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
+ * ScoreCenter Class contains the JComponent ScoreBlock and BestScore, representing what their
+ * name states, respectively. Because the dimensions of my game window are fixed with, The place
+ * -ment of thse two can be hard coded (ish.... dependedent on where the whole 'ScoreKeeper'
+ * class is).
  *
+ * @author emma-campbell
+ * @version 1.0.0
+ * @since 2019-02-26
  */
 public class ScoreCenter extends JComponent {
 
@@ -12,6 +19,12 @@ public class ScoreCenter extends JComponent {
     private ScoreBlock currScore;
     private BestScore best;
 
+    /**
+     * Constructor ScoreCenter object
+     *
+     * @param x x-axis location to begin drawing
+     * @param y y-axis location to begin drawing
+     */
     public ScoreCenter(int x, int y) {
         super();
         setCenter(x,y);
@@ -20,28 +33,57 @@ public class ScoreCenter extends JComponent {
         this.setPreferredSize(new Dimension(400, 70));
     }
 
+    /**
+     * Constructor ScoreCenter object
+     *
+     * @param center Point(x,y) location to begin drawing
+     */
     public ScoreCenter(Point center) {
         super();
         setCenter(center);
     }
 
-    public void setCenter(int x, int y) {
+    /**
+     * Sets the point on canvas to draw
+     *
+     * @param x x-axis location to begin drawing
+     * @param y y-axis location to begin drawing
+     */
+    private void setCenter(int x, int y) {
         center = new Point(x,y);
     }
 
-    public void setCenter(Point center) {
+    /**
+     * Sets the point on canvas to draw
+     *
+     * @param center Point(x,y) location to begin drawing
+     */
+    private void setCenter(Point center) {
         this.center = center;
     }
 
+    /**
+     * Add points to current score
+     *
+     * @param points total points earned (per move)
+     */
     public void addPoints(int points) {
         currScore.add(points);
     }
 
 
+    /**
+     * Sets the best score if beaten
+     *
+     * @param score new best score
+     */
     public void setBest(int score) {
         best.setBest(score);
     }
 
+    /**
+     * Sets the best score (if beaten) and clears the scoring from last round.
+     */
     public void reset() {
 
         int bestval = best.get();
@@ -65,40 +107,66 @@ public class ScoreCenter extends JComponent {
    }
 }
 
+/**
+ * ScoreBlock class - shows the user their current score
+ */
 class ScoreBlock extends JComponent {
 
+    private Point loc; //location of block
+    private int score = 0; //score value
 
-    private Point loc;
-    private int score = 0;
-
-    public ScoreBlock(int x, int y) {
+    /**
+     * Constructor ScoreBlock object
+     *
+     * @param x x-axis location
+     * @param y y-axis location
+     */
+    ScoreBlock(int x, int y) {
         loc = new Point(x,y);
     }
 
+    /**
+     * Constructor ScoreBlock object
+     *
+     * @param p point(x,y) location
+     */
     public ScoreBlock(Point p) {
         loc = p;
     }
 
-    protected void add(int points) {
+    /**
+     * Adds points to total score
+     *
+     * @param points points to be added
+     */
+    void add(int points) {
         score += points;
-        repaint();
+        repaint(); //refresh scoreboard
     }
 
-    public int get() {
+    /**
+     * returns the value being displayed
+     *
+     * @return this.score
+     */
+    int get() {
         return score;
     }
 
-    public void clear() {
+    /**
+     * Removes the score and sets the scoreboard back to 0
+     */
+    void clear() {
         score = 0;
         repaint();
     }
+
 
     @Override
     protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
 
-        //TODO add darker blue background later
         g.setColor(new Color(125, 115, 103));
         g.fillRect(loc.x, loc.y, 70, 50);
 
@@ -133,24 +201,44 @@ class ScoreBlock extends JComponent {
     }
 }
 
+/**
+ * BestScore - JComponent shows the user their best score
+ */
 class BestScore extends JComponent {
 
     private Point loc;
     private int score = 0;
 
-    public BestScore(int x, int y) {
+    /**
+     * Constructor BestScore object
+     * @param x x-axis location
+     * @param y y-axis location
+     */
+    BestScore(int x, int y) {
         loc = new Point(x, y);
     }
 
+    /**
+     * Constructor BestScore object
+     * @param loc point(x,y) location
+     */
     public BestScore(Point loc) {
         this.loc = loc;
     }
 
-    protected void setBest(int score) {
+    /**
+     * Sets the new best score to display
+     * @param score new score to display
+     */
+    void setBest(int score) {
         this.score = score;
     }
 
-    public int get() {
+    /**
+     * Returns the value displayed by BestScore object
+     * @return current leader... best score
+     */
+    int get() {
         return score;
     }
 
