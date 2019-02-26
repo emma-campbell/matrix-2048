@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c93ed01f-ee3f-4c2b-84b7-abd91b1fd524" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/App$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/App$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/gameplay/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/gameplay/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/gameplay/Matrix.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/gameplay/Matrix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/gameplay/MatrixCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/gameplay/MatrixCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/infoPanel/TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/infoPanel/TopPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/score/BestScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/score/BestScore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/score/ScoreBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/score/ScoreBlock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/score/ScoreCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/matrix-2048/app/matrix/views/score/ScoreCenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/matrix/gameplay/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/gameplay/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/matrix/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/views/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/matrix/views/infoPanel/TopPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/views/infoPanel/TopPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/matrix/views/score/ScoreCenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/matrix/views/score/ScoreCenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs_err_pid10408.log" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="309">
@@ -68,6 +54,18 @@
                 <element signature="method#right#0;class#Matrix#0" />
                 <element signature="method#drawBoard#0;class#Matrix#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="34">
+                <caret line="2" column="100" selection-start-line="2" selection-start-column="100" selection-end-line="2" selection-end-column="100" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -125,6 +123,7 @@
         <option value="$PROJECT_DIR$/src/app/matrix/views/GUI.java" />
         <option value="$PROJECT_DIR$/src/app/matrix/gameplay/Game.java" />
         <option value="$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -197,7 +196,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551160520445" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551210883713" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -306,7 +305,7 @@
       <workItem from="1551127198518" duration="502000" />
       <workItem from="1551128898370" duration="16084000" />
       <workItem from="1551189350647" duration="5408000" />
-      <workItem from="1551210448197" duration="282000" />
+      <workItem from="1551210448197" duration="522000" />
     </task>
     <task id="LOCAL-00001" summary="Added game class">
       <created>1550522594666</created>
@@ -326,13 +325,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69993000" />
+    <option name="totallyTimeSpent" value="70233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49905482" visible="true" weight="0.32471728" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49905482" visible="true" weight="0.32471728" />
       <window_info id="Structure" order="1" sideWeight="0.50094515" side_tool="true" weight="0.26609442" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -341,7 +340,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13375796" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.13375796" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2955414" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -349,7 +348,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32943013" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3253886" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32484075" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3284974" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -444,6 +443,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hs_err_pid10408.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/matrix/gameplay/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -458,6 +460,16 @@
             <element signature="method#right#0;class#Matrix#0" />
             <element signature="method#drawBoard#0;class#Matrix#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="34">
+            <caret line="2" column="100" selection-start-line="2" selection-start-column="100" selection-end-line="2" selection-end-column="100" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
